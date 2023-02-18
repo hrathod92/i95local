@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Upload images addon for CKEditor</title>
+<meta name="description" content="Free Upload images addon for CKEditor, from http://coursesweb.net/ " />
+<style>
+<!--
+.sb {font-weight:700;}
+.si {font-style:oblique;}
+.sbi {font-weight:700; font-style:oblique;}
+pre {
+margin:1em;
+background:#ebebfe;
+padding:.2em .3em;
+font-size:1.15em;
+font-weight:600;
+color:#0001be;
+}
+//-->
+</style>
+</head>
+<body>
+<h1>Upload images addon for CKEditor</h1>
+<h3>Instructions</h3>
+1. To use this addon in CKEditor, copy the "<span class="sb">imgupload.php</span>" file directly in the "<span class="sbi">ckeditor/plugins/</span>" folder.<br><br>
+2. Change the value of <span class="sb">$upload_dir</span> variable (line 5), with the path of images-directory on your server, RELATIVE TO THE ROOT OF YOUR WEBSITE ON SERVER.<br><br>
+3. By default, if the name of the uploaded file exists in the "upload_dir", it will be renamed with "<span class="si">filename_NR.ext</span>" (NR is a number). If you want to Overwrite the existing file, set value of 0 to RENAME_F (line 9).<br><br>
+4. Sets CHMOD writable permision (0777) to image-upload folder on your server (if on Linux system), to allow PHP to upload the files.<br><br>
+5. Enable the plugin by adding the <span class="sb">filebrowserImageUploadUrl</span> parameter in CKEditor configuration on your page:
+<pre>
+CKEDITOR.replace('textareaId', {
+  "filebrowserImageUploadUrl": "/path_to/ckeditor/plugins/imgupload.php"
+});</pre><br>
+ &bull; For quesions or problems related to this script, write on the forum: <a href="http://coursesweb.net/forum/" title="CoursesWeb Forum">http://coursesweb.net/forum/</a>
+</body>
+</html>

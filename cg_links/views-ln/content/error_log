@@ -1,0 +1,2 @@
+[08-Sep-2017 18:03:50 UTC] PHP Fatal error:  Class 'App\Block' not found in /home/cgdev2/public_html/i95/resources/views/content/_block_index.blade.php on line 1
+[10-Oct-2017 12:19:26 UTC] PHP Fatal error:  Class 'App\Block' not found in /home/cgdev2/public_html/i95/resources/views/content/_block_content.blade.php on line 1

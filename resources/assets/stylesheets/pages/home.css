@@ -1,0 +1,103 @@
+/* RETINA DISPLAY IMAGES */
+/* line 4, ../../sass/pages/home.scss */
+.company-title {
+  font-size: 1.638em;
+  font-weight: 700;
+  line-height: 1.125em;
+  margin: 0 0 .5em;
+}
+
+/* line 10, ../../sass/pages/home.scss */
+.welcome-text {
+  font-size: 1.25em;
+  margin: 0 0 1em;
+}
+
+/* line 15, ../../sass/pages/home.scss */
+.monthly-order-wrapper .order {
+  zoom: 1;
+  margin: 0 0 1em;
+  padding: 0 0 1em;
+}
+/* line 51, ../../sass/base/_mixins.scss */
+.monthly-order-wrapper .order:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 19, ../../sass/pages/home.scss */
+.monthly-order-wrapper .order .order-image {
+  float: left;
+  width: 100px;
+}
+/* line 23, ../../sass/pages/home.scss */
+.monthly-order-wrapper .order .order-info {
+  margin: 0 0 0 120px;
+}
+/* line 25, ../../sass/pages/home.scss */
+.monthly-order-wrapper .order .order-info .name {
+  font-weight: 500;
+}
+/* line 28, ../../sass/pages/home.scss */
+.monthly-order-wrapper .order .order-info .sku {
+  font-size: .75em;
+  margin: 0 0 1em;
+}
+
+@media all and (min-width: 480px) {
+  /* line 40, ../../sass/pages/home.scss */
+  .monthly-order-wrapper .order .order-image {
+    width: 170px;
+  }
+  /* line 43, ../../sass/pages/home.scss */
+  .monthly-order-wrapper .order .order-info {
+    margin: 0 0 0 180px;
+  }
+}
+@media all and (min-width: 768px) {
+  /* line 53, ../../sass/pages/home.scss */
+  .company-title {
+    font-size: 2.25em;
+  }
+
+  /* line 56, ../../sass/pages/home.scss */
+  .welcome-text {
+    font-size: 1.75em;
+  }
+
+  /* line 61, ../../sass/pages/home.scss */
+  .monthly-order-wrapper .order .order-image {
+    width: 200px;
+  }
+  /* line 64, ../../sass/pages/home.scss */
+  .monthly-order-wrapper .order .order-info {
+    margin: 0 0 0 220px;
+  }
+}
+@media all and (min-width: 1200px) {
+  /* line 77, ../../sass/pages/home.scss */
+  .company-title {
+    font-size: 2.5em;
+  }
+
+  /* line 80, ../../sass/pages/home.scss */
+  .welcome-text {
+    font-size: 2em;
+  }
+
+  /* line 85, ../../sass/pages/home.scss */
+  .monthly-order-wrapper .order .order-image {
+    width: 240px;
+  }
+  /* line 88, ../../sass/pages/home.scss */
+  .monthly-order-wrapper .order .order-info {
+    margin: 0 0 0 260px;
+  }
+  /* line 90, ../../sass/pages/home.scss */
+  .monthly-order-wrapper .order .order-info .name {
+    font-size: 1.25em;
+    padding: .75em 0 0;
+  }
+}

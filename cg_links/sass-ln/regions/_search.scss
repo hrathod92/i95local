@@ -1,0 +1,15 @@
+.search-form {
+	background: $gray;
+	padding: 1em;
+	margin: 0 0 2em;
+	form {
+		margin: 0;
+	}
+	label {
+		font-weight: 400;
+	}
+}
+
+.search-group, .search-groups {
+	margin: 0 0 1.5em;
+}

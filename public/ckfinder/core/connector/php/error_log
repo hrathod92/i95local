@@ -1,0 +1,2 @@
+[31-Aug-2017 14:34:21 UTC] PHP Warning:  move_uploaded_file(/var/www/surgico/public/uploads/Employment.JPG): failed to open stream: No such file or directory in /home/cgdev2/public_html/i95/public/ckfinder/core/connector/php/php5/CommandHandler/FileUpload.php on line 144
+[31-Aug-2017 14:34:21 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpm5PhIk' to '/var/www/surgico/public/uploads/Employment.JPG' in /home/cgdev2/public_html/i95/public/ckfinder/core/connector/php/php5/CommandHandler/FileUpload.php on line 144

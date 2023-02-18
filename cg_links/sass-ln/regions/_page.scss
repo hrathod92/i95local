@@ -1,0 +1,98 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+
+a.skip-main {
+  height:1px;
+  left:-999px;
+  overflow:hidden;
+  position:absolute;
+  top:auto;
+  width:1px;
+  z-index:-999;
+}
+
+
+.media-embed{
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	//padding-top: 25px;
+	height: 0;
+	clear:both;
+	float:none !important;
+	margin:0 !important;
+	iframe, object, embed{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width:100% !important;
+		height: 100% !important;
+	}
+}
+
+
+.validation-errors {
+  background: lighten($light-red, 20%);
+  border: lighten($light-red, 10%) 1px solid;
+  font-size: .875em;
+  padding: .5em;
+  ul {
+    @include clearfix;
+    margin: 0;
+  }
+}
+
+.message {
+  background: lighten($light-green, 10%);
+  border: $light-green 1px solid;
+  font-size: .875em;
+  margin: 0 0 1.5em;
+  padding: .5em;
+}
+
+.ui-timepicker-div {
+  dl {
+    dt {
+      font-size: small !important;
+      line-height: 0em !important;
+    }
+  }
+}
+
+
+#page {
+	padding: 60px 0 0;
+}
+
+
+
+@media all and (min-width: 768px) {
+	
+	#page {
+		padding: 78px 0 0;
+	}
+	
+}
+
+
+@media all and (min-width: 1440px) {
+	
+	#page {
+		padding: 92px 0 0;
+	}
+	
+}
+
+.g-recaptcha {
+	float: right;
+}
+
+#contact-info {
+	margin-bottom: -33px;
+}

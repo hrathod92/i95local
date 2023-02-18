@@ -1,0 +1,49 @@
+#superfooter {
+	background: $superfooter-color-back;
+	#superfooter-inner {
+	  background: $superfooter-inner-color-back;
+		color: $superfooter-color-text;
+	  max-width: $max-width;
+		margin: auto;
+		padding: 2em .625em;
+		text-align: center;
+		.block {
+			&.i95-block {
+				margin: 0;
+			}
+		}
+	}
+}
+
+.join-mailing-list {
+  padding: 0.5em 2em;
+  text-align: center;
+  background: white;
+  color: black;
+  display: block;
+  margin: 0 0 1.5em;
+  .button {
+	  margin: 0;
+  }
+}
+
+
+@media all and (min-width: 768px) {
+  #superfooter {
+    #superfooter-inner {
+	    display: flex;
+	    flex-flow: row wrap;
+	    justify-content: space-between;
+      text-align: left;
+      .block {
+	      flex: 0 0 49%;
+      }
+    }
+  }
+  
+  .join-mailing-list {
+	  margin: 0;
+	}
+	
+}
+

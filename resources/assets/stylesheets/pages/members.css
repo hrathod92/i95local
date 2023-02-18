@@ -1,0 +1,76 @@
+/* RETINA DISPLAY IMAGES */
+/* line 5, ../../sass/pages/members.scss */
+.members {
+  zoom: 1;
+  position: relative;
+}
+/* line 51, ../../sass/base/_mixins.scss */
+.members:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 8, ../../sass/pages/members.scss */
+.members .member {
+  border-bottom: #c2c2c2 1px solid;
+  margin: 0 0 1.5em;
+  padding: 0 0 1.5em;
+}
+/* line 12, ../../sass/pages/members.scss */
+.members .member:last-child {
+  border: none;
+}
+/* line 15, ../../sass/pages/members.scss */
+.members .member .member-image {
+  margin: 0 0 1em;
+  text-align: center;
+}
+/* line 18, ../../sass/pages/members.scss */
+.members .member .member-image img {
+  display: inline-block;
+}
+
+@media all and (min-width: 480px) {
+  /* line 31, ../../sass/pages/members.scss */
+  .members .member .member-image {
+    text-align: left;
+  }
+}
+@media all and (min-width: 768px) {
+  /* line 44, ../../sass/pages/members.scss */
+  .members .member .member-image {
+    float: left;
+    width: 125px;
+  }
+  /* line 48, ../../sass/pages/members.scss */
+  .members .member .member-text {
+    margin: 0 0 0 140px;
+  }
+}
+@media all and (min-width: 1200px) {
+  /* line 67, ../../sass/pages/members.scss */
+  .members .member .member-image {
+    float: left;
+    width: 150px;
+  }
+  /* line 71, ../../sass/pages/members.scss */
+  .members .member .member-text {
+    margin: 0 0 0 180px;
+    padding: .5em 2em 0 0;
+  }
+}
+@media all and (min-width: 1450px) {
+  /* line 87, ../../sass/pages/members.scss */
+  .members .member .member-image {
+    float: left;
+    margin: 0 0 0 1em;
+    width: 180px;
+  }
+  /* line 92, ../../sass/pages/members.scss */
+  .members .member .member-text {
+    margin: 0 0 0 230px;
+    padding: 1em 2em 0 0;
+  }
+}

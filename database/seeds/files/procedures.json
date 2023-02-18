@@ -1,0 +1,44 @@
+[
+{
+	"title": "Total Knee Replacement",
+	"body": "<p>sample body</p>",
+	"price": 0,
+	"status_id": 1
+},
+{
+	"title": "Total Hip Replacement",
+	"body": "<p>sample body</p>",
+	"price": 0,
+	"status_id": 1
+},
+{
+	"title": "Knee Arthroscopy",
+	"body": "",
+	"price": 0,
+	"status_id": 1
+},
+{
+	"title": "Knee Arthroscopy with ACL Reconstruction",
+	"body": "<p>sample body</p>",
+	"price": 0,
+	"status_id": 1
+},
+{
+	"title": "Spinal Fusion",
+	"body": "<p>sample body</p>",
+	"price": 0,
+	"status_id": 1
+},
+{
+	"title": "Lumbar Discectomy",
+	"body": "<p>sample body</p>",
+	"price": 0,
+	"status_id": 1
+},
+{
+	"title": "Ankle Fracture",
+	"body": "<p>sample body</p>",
+	"price": 0,
+	"status_id": 1
+}
+]

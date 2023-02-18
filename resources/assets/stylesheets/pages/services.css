@@ -1,0 +1,14 @@
+/* line 3, ../../sass/pages/services.scss */
+#main #main-inner #content #content-area .items .item {
+  display: inline-block;
+  width: 40%;
+}
+/* line 9, ../../sass/pages/services.scss */
+#main #main-inner #content #content-area .view-item .view-item-image {
+  float: right;
+  width: 20%;
+}
+/* line 13, ../../sass/pages/services.scss */
+#main #main-inner #content #content-area .view-item .view-item-text {
+  margin-right: 25%;
+}

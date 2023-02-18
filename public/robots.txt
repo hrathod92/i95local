@@ -1,0 +1,15 @@
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: MSNbot
+User-agent: Yahoo! Slurp
+User-agent: Facebot
+User-agent: facebookexternalhit/1.1
+User-agent: facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+User-agent: Twitterbot/1.0
+User-agent: LinkedInBot
+Allow: *
+
+User-agent: *
+Disallow: /
+
+Sitemap: https://i95business.com/sitemap

@@ -1,0 +1,181 @@
+#main {
+  @include clearfix;
+  background: $main-color-back;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  #content-header {
+	  background: $content-header-color-back;
+	  .content-header-inner {
+		  background: $content-header-inner-color-back;
+	    margin: 0 auto;
+	    max-width: $content-header-inner-max-width;
+	    padding: 0 .625em;
+		  position: relative;
+		  h1.title {
+  		  font-size: 1.375em;
+  		  margin: .625em 0 .25em;
+		  }
+	  }
+		#banner {
+			img {
+				width: 100%;
+			}
+		}
+		#breadcrumb {
+			margin-left: 10px;
+			margin-top: 0.75em;
+			color: $medium-gray;
+			font-size: 0.85em;
+			a {
+				color: $medium-gray;
+			}
+		}
+	}
+	#main-inner {
+	  background: $main-inner-color-back;
+		margin: 0 auto;
+		max-width: $max-width;
+		padding: 0 .625em;
+		#content-area {
+		  padding: 1em 0;
+		  position: relative;
+		}
+		#sidebar {
+			margin: 0;
+		}
+	}
+}
+
+
+.content-sidebar {
+  background: $very-light-gray;
+  margin: 0 0 1em;
+  padding: 1em;
+  h2 {
+	  font-size: 1.375em;
+	  line-height: 1;
+	  margin: 0 0 .5em;
+  }
+  ul {
+	  list-style: none;
+	  margin: 0;
+	  padding: 0;
+	  li {
+		  line-height: 1.25em;
+		  margin: 0 0 .5em;
+		  a {
+			  display: block;
+			  padding: .25em .125em;
+		  }
+	  }
+  }
+}
+
+
+@media all and (min-width: 480px) {
+	
+	.content-sidebar {
+	  ul {
+		  li {
+			  display: inline-block;
+			  vertical-align: top;
+			  width: 48%;
+		  }
+	  }
+	}
+	
+}
+
+
+
+@media all and (min-width: 768px) {
+
+  #main {
+    #content-header {
+      .content-header-inner {
+        h1.title {
+          font-size: 2em;
+          margin: .625em 0;
+        }
+      }
+    }
+    #main-inner {
+      #sidebar {
+				float: right;
+        margin: 0;
+        width: 33%;
+        #sidebar-inner {
+	        padding: 1.5em 0 0;
+        }
+      }
+      #content {
+        &.sidebar {
+          float: left;
+          width: 66.666%;
+          #content-area {
+            padding: 1.5em 1em 0 0;
+          }
+        }
+        #content-area {
+	        @include clearfix;
+          position: relative;
+          .content-sidebar {
+	          float: right;
+	          margin: 0 0 1em 1em;
+	          width: 180px;
+          }
+        }
+      }
+    }
+  }
+  
+  .content-sidebar {
+	  ul {
+		  li {
+			  display: block;
+			  width: inherit;
+		  }
+	  }
+	}
+  
+
+}
+
+
+
+@media all and (min-width: 1200px) {
+
+  #main {
+    #main-inner {
+  	  #content {
+    		&.sidebar {
+    		  width: 73%;
+    		}
+  		}
+  		#sidebar {
+  			width: 25%;
+  		}
+  	}
+  }
+
+}
+
+
+@media all and (min-width: 1280px) {
+
+  #main {
+    #main-inner {
+  	  #content {
+    		&.sidebar {
+    		  width: 75%;
+    		  #content-area {
+	    		  padding: 2em 1em 0 0;
+    		  }
+    		}
+  		}
+  	}
+  }
+
+}

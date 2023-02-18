@@ -1,0 +1,102 @@
+/* RETINA DISPLAY IMAGES */
+/* line 8, ../../sass/pages/dashboard.scss */
+#main #main-inner #sidebar #sidebar-inner h3 {
+  font-family: "avalonmedium", helvetica, arial, verdana, sans-serif;
+}
+/* line 11, ../../sass/pages/dashboard.scss */
+#main #main-inner #sidebar #sidebar-inner ul.dashboard-menu {
+  font-size: .875em;
+  margin: 0 0 1.5em;
+  padding: 0;
+}
+/* line 15, ../../sass/pages/dashboard.scss */
+#main #main-inner #sidebar #sidebar-inner ul.dashboard-menu li {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+}
+/* line 19, ../../sass/pages/dashboard.scss */
+#main #main-inner #sidebar #sidebar-inner ul.dashboard-menu li a {
+  border-bottom: 1px solid #aeaeae;
+  display: block;
+  padding: .5em;
+}
+/* line 23, ../../sass/pages/dashboard.scss */
+#main #main-inner #sidebar #sidebar-inner ul.dashboard-menu li a .fa, #main #main-inner #sidebar #sidebar-inner ul.dashboard-menu li a i {
+  margin: 0 1em 0 0;
+}
+/* line 26, ../../sass/pages/dashboard.scss */
+#main #main-inner #sidebar #sidebar-inner ul.dashboard-menu li a:hover {
+  background: #ebebeb none no-repeat scroll 0 0;
+  text-decoration: none;
+}
+
+/* line 38, ../../sass/pages/dashboard.scss */
+.content-view-wrapper,
+.account-wrapper,
+.contacts-wrapper,
+.user-wrapper {
+  zoom: 1;
+}
+/* line 51, ../../sass/base/_mixins.scss */
+.content-view-wrapper:after,
+.account-wrapper:after,
+.contacts-wrapper:after,
+.user-wrapper:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 43, ../../sass/pages/dashboard.scss */
+.content-view-wrapper div,
+.account-wrapper div,
+.contacts-wrapper div,
+.user-wrapper div {
+  margin-bottom: .5em;
+}
+/* line 44, ../../sass/pages/dashboard.scss */
+.content-view-wrapper .title,
+.account-wrapper .title,
+.contacts-wrapper .title,
+.user-wrapper .title {
+  font-family: "avalon_mediumbold", helvetica, arial, verdana, sans-serif;
+  font-size: 1.75em;
+  margin: 0 0 .25em;
+}
+/* line 49, ../../sass/pages/dashboard.scss */
+.content-view-wrapper .address,
+.account-wrapper .address,
+.contacts-wrapper .address,
+.user-wrapper .address {
+  font-size: 1.25em;
+}
+
+/* line 55, ../../sass/pages/dashboard.scss */
+.actions {
+  zoom: 1;
+}
+/* line 51, ../../sass/base/_mixins.scss */
+.actions:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 57, ../../sass/pages/dashboard.scss */
+.actions.bottom {
+  margin: 1.5em 0 0;
+}
+/* line 60, ../../sass/pages/dashboard.scss */
+.actions.top {
+  margin: 0 0 1.5em;
+}
+
+@media all and (min-width: 960px) {
+  /* line 75, ../../sass/pages/dashboard.scss */
+  #main #main-inner #sidebar #sidebar-inner ul.dashboard-menu {
+    font-size: 1em;
+  }
+}

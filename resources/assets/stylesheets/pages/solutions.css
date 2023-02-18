@@ -1,0 +1,5 @@
+/* line 3, ../../sass/pages/solutions.scss */
+#main #main-inner #content #content-area .items .item {
+  display: inline-block;
+  width: 40%;
+}

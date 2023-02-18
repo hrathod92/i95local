@@ -1,0 +1,188 @@
+/* RETINA DISPLAY IMAGES */
+/* line 4, ../../sass/pages/news.scss */
+.articles {
+  border-top: 1px solid #898989;
+  padding: 1em 0;
+}
+/* line 7, ../../sass/pages/news.scss */
+.articles .article-wrap {
+  zoom: 1;
+  border-bottom: 1px solid #898989;
+  margin: 0 0 1em;
+  padding: 0 0 1em;
+}
+/* line 51, ../../sass/base/_mixins.scss */
+.articles .article-wrap:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 12, ../../sass/pages/news.scss */
+.articles .article-wrap:last-child {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 17, ../../sass/pages/news.scss */
+.articles .article-wrap .article-image-wrap {
+  display: none;
+}
+/* line 18, ../../sass/pages/news.scss */
+.articles .article-wrap .date {
+  font-size: .875em;
+  font-weight: 600;
+  margin: 0 0 .25em;
+}
+/* line 23, ../../sass/pages/news.scss */
+.articles .article-wrap .title {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: 0;
+}
+/* line 27, ../../sass/pages/news.scss */
+.articles .article-wrap .title a {
+  color: #000;
+}
+/* line 31, ../../sass/pages/news.scss */
+.articles .article-wrap .teaser {
+  display: none;
+  font-size: .875em;
+}
+
+/* line 40, ../../sass/pages/news.scss */
+.recent-news-block.styled-list ul {
+  padding: 0;
+}
+/* line 42, ../../sass/pages/news.scss */
+.recent-news-block.styled-list ul li {
+  border-bottom: rgba(194, 194, 194, 0.25) 1px solid;
+}
+/* line 44, ../../sass/pages/news.scss */
+.recent-news-block.styled-list ul li:last-child {
+  border: none;
+}
+/* line 47, ../../sass/pages/news.scss */
+.recent-news-block.styled-list ul li a {
+  display: block;
+  padding: .375em;
+}
+
+/* line 58, ../../sass/pages/news.scss */
+.article .article-image {
+  display: none;
+}
+/* line 59, ../../sass/pages/news.scss */
+.article .article-title {
+  margin: 0 0 .375em;
+}
+/* line 62, ../../sass/pages/news.scss */
+.article .article-date {
+  font-size: .875em;
+  font-weight: 600;
+  margin: 0 0 1.5em;
+}
+
+@media all and (min-width: 768px) {
+  /* line 75, ../../sass/pages/news.scss */
+  #main #main-inner #sidebar {
+    float: left;
+    margin: 0 2% 1.5em 0;
+    width: 18%;
+  }
+  /* line 81, ../../sass/pages/news.scss */
+  #main #main-inner #content.sidebar {
+    float: right;
+  }
+  /* line 83, ../../sass/pages/news.scss */
+  #main #main-inner #content.sidebar #content-area {
+    padding: 0 0 2em 2em;
+  }
+
+  /* line 91, ../../sass/pages/news.scss */
+  .articles {
+    padding: 1.5em 0;
+  }
+  /* line 93, ../../sass/pages/news.scss */
+  .articles .article-wrap {
+    margin: 0 0 1.5em;
+    padding: 0 0 1.5em;
+  }
+  /* line 96, ../../sass/pages/news.scss */
+  .articles .article-wrap .article-image-wrap {
+    display: block;
+    float: left;
+    margin: 0;
+    width: 200px;
+  }
+  /* line 102, ../../sass/pages/news.scss */
+  .articles .article-wrap .article {
+    margin: 0 1.5em 0 225px;
+  }
+  /* line 105, ../../sass/pages/news.scss */
+  .articles .article-wrap .title {
+    margin: 0 0 .5em;
+  }
+  /* line 106, ../../sass/pages/news.scss */
+  .articles .article-wrap .teaser {
+    display: block;
+  }
+}
+@media all and (min-width: 960px) {
+  /* line 116, ../../sass/pages/news.scss */
+  .articles {
+    padding: 2em 0;
+  }
+  /* line 118, ../../sass/pages/news.scss */
+  .articles .article-wrap {
+    margin: 0 0 2em;
+    padding: 0 0 2em;
+  }
+  /* line 121, ../../sass/pages/news.scss */
+  .articles .article-wrap .article-image-wrap {
+    width: 240px;
+  }
+  /* line 124, ../../sass/pages/news.scss */
+  .articles .article-wrap .article {
+    margin: 0 1.5em 0 270px;
+  }
+  /* line 127, ../../sass/pages/news.scss */
+  .articles .article-wrap .date {
+    margin: 0 0 .875em;
+  }
+  /* line 130, ../../sass/pages/news.scss */
+  .articles .article-wrap .title {
+    font-size: 1.5em;
+  }
+  /* line 133, ../../sass/pages/news.scss */
+  .articles .article-wrap .teaser {
+    font-size: inherit;
+    line-height: 1.375em;
+  }
+}
+@media all and (min-width: 1200px) {
+  /* line 149, ../../sass/pages/news.scss */
+  .articles .article-wrap .article-image-wrap {
+    margin: 0 0 0 1em;
+    width: 300px;
+  }
+  /* line 153, ../../sass/pages/news.scss */
+  .articles .article-wrap .article {
+    margin: 0 2.5em 0 345px;
+  }
+  /* line 156, ../../sass/pages/news.scss */
+  .articles .article-wrap .date {
+    font-size: inherit;
+  }
+  /* line 159, ../../sass/pages/news.scss */
+  .articles .article-wrap .title {
+    font-size: 1.875em;
+  }
+}
+@media all and (min-width: 1450px) {
+  /* line 174, ../../sass/pages/news.scss */
+  .articles .article-wrap .article {
+    margin: 0 4em 0 360px;
+  }
+}

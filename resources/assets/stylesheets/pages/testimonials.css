@@ -1,0 +1,95 @@
+/* RETINA DISPLAY IMAGES */
+/* line 5, ../../sass/pages/testimonials.scss */
+.testimonials {
+  zoom: 1;
+  position: relative;
+}
+/* line 51, ../../sass/base/_mixins.scss */
+.testimonials:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/* line 8, ../../sass/pages/testimonials.scss */
+.testimonials .testimonial {
+  border-bottom: #c2c2c2 1px solid;
+  margin: 0 0 1.5em;
+  padding: 0 0 1.5em;
+}
+/* line 12, ../../sass/pages/testimonials.scss */
+.testimonials .testimonial:last-child {
+  border: none;
+}
+/* line 15, ../../sass/pages/testimonials.scss */
+.testimonials .testimonial .testimonial-image {
+  margin: 0 0 1em;
+  text-align: center;
+}
+/* line 18, ../../sass/pages/testimonials.scss */
+.testimonials .testimonial .testimonial-image img {
+  display: inline-block;
+}
+
+/* line 25, ../../sass/pages/testimonials.scss */
+.testimonial-credits {
+  border-left: 10px solid #15315f;
+  margin: 0 0 2em;
+  padding: .125em 0 .125em 1em;
+}
+/* line 29, ../../sass/pages/testimonials.scss */
+.testimonial-credits .name {
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 .375em;
+  text-transform: uppercase;
+}
+/* line 36, ../../sass/pages/testimonials.scss */
+.testimonial-credits .organization {
+  line-height: 1;
+}
+
+@media all and (min-width: 480px) {
+  /* line 46, ../../sass/pages/testimonials.scss */
+  .testimonials .testimonial .testimonial-image {
+    text-align: left;
+  }
+}
+@media all and (min-width: 768px) {
+  /* line 59, ../../sass/pages/testimonials.scss */
+  .testimonials .testimonial .testimonial-image {
+    float: left;
+    width: 125px;
+  }
+  /* line 63, ../../sass/pages/testimonials.scss */
+  .testimonials .testimonial .testimonial-text {
+    margin: 0 0 0 140px;
+  }
+}
+@media all and (min-width: 1200px) {
+  /* line 82, ../../sass/pages/testimonials.scss */
+  .testimonials .testimonial .testimonial-image {
+    float: left;
+    width: 150px;
+  }
+  /* line 86, ../../sass/pages/testimonials.scss */
+  .testimonials .testimonial .testimonial-text {
+    margin: 0 0 0 180px;
+    padding: .5em 2em 0 0;
+  }
+}
+@media all and (min-width: 1450px) {
+  /* line 102, ../../sass/pages/testimonials.scss */
+  .testimonials .testimonial .testimonial-image {
+    float: left;
+    margin: 0 0 0 1em;
+    width: 180px;
+  }
+  /* line 107, ../../sass/pages/testimonials.scss */
+  .testimonials .testimonial .testimonial-text {
+    margin: 0 0 0 230px;
+    padding: 1em 2em 0 0;
+  }
+}

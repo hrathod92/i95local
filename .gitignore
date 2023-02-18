@@ -1,0 +1,12 @@
+public/uploads/
+vendor/
+/node_modules
+Homestead.yaml
+.env
+public/data/
+public/.well-known/
+storage/framework/views/
+public/.user.ini
+public/php.ini
+public/.ea-php-cli.cache
+*DS_Store*

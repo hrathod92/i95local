@@ -1,0 +1,217 @@
+[
+{
+	"name" : "bounce",
+	"css_class" : "bounce",
+	"description": ""
+},
+{
+	"name" : "flash",
+	"css_class" : "flash",
+	"description": ""
+},
+{
+	"name" : "pulse",
+	"css_class" : "pulse",
+	"description": ""
+},
+{
+	"name" : "rubberBand",
+	"css_class" : "rubberBand",
+	"description": ""
+},
+{
+	"name" : "shake",
+	"css_class" : "shake",
+	"description": ""
+},
+{
+	"name" : "headShake",
+	"css_class" : "headShake",
+	"description": ""
+},
+{
+	"name" : "swing",
+	"css_class" : "swing",
+	"description": ""
+},
+{
+	"name" : "tada",
+	"css_class" : "tada",
+	"description": ""
+},
+{
+	"name" : "wobble",
+	"css_class" : "wobble",
+	"description": ""
+},
+{
+	"name" : "jello",
+	"css_class" : "jello",
+	"description": ""
+},
+{
+	"name" : "bounceIn",
+	"css_class" : "bounceIn",
+	"description": ""
+},
+{
+	"name" : "bounceInDown",
+	"css_class" : "bounceInDown",
+	"description": ""
+},
+{
+	"name" : "bounceInLeft",
+	"css_class" : "bounceInLeft",
+	"description": ""
+},
+{
+	"name" : "bounceInRight",
+	"css_class" : "bounceInRight",
+	"description": ""
+},
+{
+	"name" : "bounceInUp",
+	"css_class" : "bounceInUp",
+	"description": ""
+},
+{
+	"name" : "fadeIn",
+	"css_class" : "fadeIn",
+	"description": ""
+},
+{
+	"name" : "fadeInDown",
+	"css_class" : "fadeInDown",
+	"description": ""
+},
+{
+	"name" : "fadeInDownBig",
+	"css_class" : "fadeInDownBig",
+	"description": ""
+},
+{
+	"name" : "fadeInLeft",
+	"css_class" : "fadeInLeft",
+	"description": ""
+},
+{
+	"name" : "fadeInLeftBig",
+	"css_class" : "fadeInLeftBig",
+	"description": ""
+},
+{
+	"name" : "fadeInRight",
+	"css_class" : "fadeInRight",
+	"description": ""
+},
+{
+	"name" : "fadeInRightBig",
+	"css_class" : "fadeInRightBig",
+	"description": ""
+},
+{
+	"name" : "fadeInUp",
+	"css_class" : "fadeInUp",
+	"description": ""
+},
+{
+	"name" : "fadeInUpBig",
+	"css_class" : "fadeInUpBig",
+	"description": ""
+},
+{
+	"name" : "flipInX",
+	"css_class" : "flipInX",
+	"description": ""
+},
+{
+	"name" : "flipInY",
+	"css_class" : "flipInY",
+	"description": ""
+},
+{
+	"name" : "lightSpeedIn",
+	"css_class" : "lightSpeedIn",
+	"description": ""
+},
+{
+	"name" : "rotateIn",
+	"css_class" : "rotateIn",
+	"description": ""
+},
+{
+	"name" : "rotateInDownLeft",
+	"css_class" : "rotateInDownLeft",
+	"description": ""
+},
+{
+	"name" : "rotateInDownRight",
+	"css_class" : "rotateInDownRight",
+	"description": ""
+},
+{
+	"name" : "rotateInUpLeft",
+	"css_class" : "rotateInUpLeft",
+	"description": ""
+},
+{
+	"name" : "rotateInUpRight",
+	"css_class" : "rotateInUpRight",
+	"description": ""
+},
+{
+	"name" : "hinge",
+	"css_class" : "hinge",
+	"description": ""
+},
+{
+	"name" : "rollIn",
+	"css_class" : "rollIn",
+	"description": ""
+},
+{
+	"name" : "zoomIn",
+	"css_class" : "zoomIn",
+	"description": ""
+},
+{
+	"name" : "zoomInDown",
+	"css_class" : "zoomInDown",
+	"description": ""
+},
+{
+	"name" : "zoomInLeft",
+	"css_class" : "zoomInLeft",
+	"description": ""
+},
+{
+	"name" : "zoomInRight",
+	"css_class" : "zoomInRight",
+	"description": ""
+},
+{
+	"name" : "zoomInUp",
+	"css_class" : "zoomInUp",
+	"description": ""
+},
+{
+	"name" : "slideInDown",
+	"css_class" : "slideInDown",
+	"description": ""
+},
+{
+	"name" : "slideInLeft",
+	"css_class" : "slideInLeft",
+	"description": ""
+},
+{
+	"name" : "slideInRight",
+	"css_class" : "slideInRight",
+	"description": ""
+},
+{
+	"name" : "slideInUp",
+	"css_class" : "slideInUp",
+	"description": ""
+}
+]

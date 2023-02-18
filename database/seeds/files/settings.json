@@ -1,0 +1,12 @@
+[
+	{
+		"slug": "home-banner-flag",
+		"title": "Home Banner Flag (Enter show or hide)",
+		"body": "show"
+	},
+	{
+		"slug": "home-banner-text",
+		"title": "Home Banner Text",
+		"body": "Home banner test text.  Set actual text in the settings menu under the admin dashboard.  \r\nGrant applications open during March 2016. Thanks."
+	}
+]

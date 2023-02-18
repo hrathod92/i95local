@@ -1,0 +1,68 @@
+[
+{
+	"title": "Introduction",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Diagnoses & Indications",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Non-Surgical Treatment Options",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Potential Benefits &  Risks of Surgery",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Potential Benefits &  Risks of Not Having Surgery",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Outcomes after Surgery",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "What are Normal Expectations after Surgery",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Special Considerations",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Frequently asked questions",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Logistics of Surgery",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+},
+{
+	"title": "Pain Control After Surgery",
+	"body": "<p>sample body</p>",
+	"order": 0,
+	"procedure_id": 3
+}
+]

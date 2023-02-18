@@ -1,0 +1,297 @@
+[
+{ 
+	"name": "Alabama",
+	"abbreviation" : "Ala.",
+	"postal_code" : "AL"
+},
+{ 
+	"name": "Alaska",
+	"abbreviation" : "Alaska",
+	"postal_code" : "AK"
+},
+{ 
+	"name": "American Samoa",
+	"abbreviation" : " ",
+	"postal_code" : "AS"
+},
+{ 
+	"name": "Arizona",
+	"abbreviation" : "Ariz.",
+	"postal_code" : "AZ"
+},
+{ 
+	"name": "Arkansas",
+	"abbreviation" : "Ark.",
+	"postal_code" : "AR"
+},
+{ 
+	"name": "California",
+	"abbreviation" : "Calif.",
+	"postal_code" : "CA"
+},
+{ 
+	"name": "Colorado",
+	"abbreviation" : "Colo.",
+	"postal_code" : "CO"
+},
+{ 
+	"name": "Connecticut",
+	"abbreviation" : "Conn.",
+	"postal_code" : "CT"
+},
+{ 
+	"name": "Delaware",
+	"abbreviation" : "Del.",
+	"postal_code" : "DE"
+},
+{ 
+	"name": "Dist. of Columbia",
+	"abbreviation" : "D.C.",
+	"postal_code" : "DC"
+},
+{ 
+	"name": "Florida",
+	"abbreviation" : "Fla.",
+	"postal_code" : "FL"
+},
+{ 
+	"name": "Georgia",
+	"abbreviation" : "Ga.",
+	"postal_code" : "GA"
+},
+{ 
+	"name": "Guam",
+	"abbreviation" : "Guam",
+	"postal_code" : "GU"
+},
+{ 
+	"name": "Hawaii",
+	"abbreviation" : "Hawaii",
+	"postal_code" : "HI"
+},
+{ 
+	"name": "Idaho",
+	"abbreviation" : "Idaho",
+	"postal_code" : "ID"
+},
+{ 
+	"name": "Illinois",
+	"abbreviation" : "Ill.",
+	"postal_code" : "IL"
+},
+{ 
+	"name": "Indiana",
+	"abbreviation" : "Ind.",
+	"postal_code" : "IN"
+},
+{ 
+	"name": "Iowa",
+	"abbreviation" : "Iowa",
+	"postal_code" : "IA"
+},
+{ 
+	"name": "Kansas",
+	"abbreviation" : "Kans.",
+	"postal_code" : "KS"
+},
+{ 
+	"name": "Kentucky",
+	"abbreviation" : "Ky.",
+	"postal_code" : "KY"
+},
+{ 
+	"name": "Louisiana",
+	"abbreviation" : "La.",
+	"postal_code" : "LA"
+},
+{ 
+	"name": "Maine",
+	"abbreviation" : "Maine",
+	"postal_code" : "ME"
+},
+{ 
+	"name": "Maryland",
+	"abbreviation" : "Md.",
+	"postal_code" : "MD"
+},
+{ 
+	"name": "Marshall Islands",
+	"abbreviation" : " ",
+	"postal_code" : "MH"
+},
+{ 
+	"name": "Massachusetts",
+	"abbreviation" : "Mass.",
+	"postal_code" : "MA"
+},
+{ 
+	"name": "Michigan",
+	"abbreviation" : "Mich.",
+	"postal_code" : "MI"
+},
+{ 
+	"name": "Micronesia",
+	"abbreviation" : " ",
+	"postal_code" : "FM"
+},
+{ 
+	"name": "Minnesota",
+	"abbreviation" : "Minn.",
+	"postal_code" : "MN"
+},
+{ 
+	"name": "Mississippi",
+	"abbreviation" : "Miss.",
+	"postal_code" : "MS"
+},
+{ 
+	"name": "Missouri",
+	"abbreviation" : "Mo.",
+	"postal_code" : "MO"
+},
+{ 
+	"name": "Montana",
+	"abbreviation" : "Mont.",
+	"postal_code" : "MT"
+},
+{ 
+	"name": "Nebraska",
+	"abbreviation" : "Nebr.",
+	"postal_code" : "NE"
+},
+{ 
+	"name": "Nevada",
+	"abbreviation" : "Nev.",
+	"postal_code" : "NV"
+},
+{ 
+	"name": "New Hampshire",
+	"abbreviation" : "N.H.",
+	"postal_code" : "NH"
+},
+{ 
+	"name": "New Jersey",
+	"abbreviation" : "N.J.",
+	"postal_code" : "NJ"
+},
+{ 
+	"name": "New Mexico",
+	"abbreviation" : "N.M.",
+	"postal_code" : "NM"
+},
+{ 
+	"name": "New York",
+	"abbreviation" : "N.Y.",
+	"postal_code" : "NY"
+},
+{ 
+	"name": "North Carolina",
+	"abbreviation" : "N.C.",
+	"postal_code" : "NC"
+},
+{ 
+	"name": "North Dakota",
+	"abbreviation" : "N.D.",
+	"postal_code" : "ND"
+},
+{ 
+	"name": "Northern Marianas",
+	"abbreviation" : " ",
+	"postal_code" : "MP"
+},
+{ 
+	"name": "Ohio",
+	"abbreviation" : "Ohio",
+	"postal_code" : "OH"
+},
+{ 
+	"name": "Oklahoma",
+	"abbreviation" : "Okla.",
+	"postal_code" : "OK"
+},
+{ 
+	"name": "Oregon",
+	"abbreviation" : "Ore.",
+	"postal_code" : "OR"
+},
+{ 
+	"name": "Palau",
+	"abbreviation" : " ",
+	"postal_code" : "PW"
+},
+{ 
+	"name": "Pennsylvania",
+	"abbreviation" : "Pa.",
+	"postal_code" : "PA"
+},
+{ 
+	"name": "Puerto Rico",
+	"abbreviation" : "P.R.",
+	"postal_code" : "PR"
+},
+{ 
+	"name": "Rhode Island",
+	"abbreviation" : "R.I.",
+	"postal_code" : "RI"
+},
+{ 
+	"name": "South Carolina",
+	"abbreviation" : "S.C.",
+	"postal_code" : "SC"
+},
+{ 
+	"name": "South Dakota",
+	"abbreviation" : "S.D.",
+	"postal_code" : "SD"
+},
+{ 
+	"name": "Tennessee",
+	"abbreviation" : "Tenn.",
+	"postal_code" : "TN"
+},
+{ 
+	"name": "Texas",
+	"abbreviation" : "Tex.",
+	"postal_code" : "TX"
+},
+{ 
+	"name": "Utah",
+	"abbreviation" : "Utah",
+	"postal_code" : "UT"
+},
+{ 
+	"name": "Vermont",
+	"abbreviation" : "Vt.",
+	"postal_code" : "VT"
+},
+{ 
+	"name": "Virginia",
+	"abbreviation" : "Va.",
+	"postal_code" : "VA"
+},
+{ 
+	"name": "Virgin Islands",
+	"abbreviation" : "V.I.",
+	"postal_code" : "VI"
+},
+{ 
+	"name": "Washington",
+	"abbreviation" : "Wash.",
+	"postal_code" : "WA"
+},
+{ 
+	"name": "West Virginia",
+	"abbreviation" : "W.Va.",
+	"postal_code" : "WV"
+},
+{ 
+	"name": "Wisconsin",
+	"abbreviation" : "Wis.",
+	"postal_code" : "WI"
+},
+{ 
+	"name": "Wyoming",
+	"abbreviation" : "Wyo.",
+	"postal_code" : "WY"
+}
+]

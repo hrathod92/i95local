@@ -1,0 +1,13 @@
+.page-categories-edit #title, .page-categories-create #title {
+  width: 50%;
+}
+
+.page-categories-edit #level, .page-categories-create #level, .page-categories-edit #parent_id, .page-categories-create #parent_id  {
+  width: 27%;
+}
+
+.page-categories-edit .category-btn, .page-categories-create .category-btn {
+  float: left;
+  margin-top: 48px;
+  margin-left: 45%;
+}
