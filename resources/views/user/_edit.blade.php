@@ -12,17 +12,17 @@
 
 @if ( \Auth::user()->role == 'admin' )
   <?php 
-    $companyList = App\Company::where('status_id', 0)->orderBy( 'title' )->lists( 'title', 'id' );
+    $companyList = App\Company::where('status_id', 0)->orderBy( 'title' )->pluck( 'title', 'id' );
     $companyList->prepend('None', 0);
   ?>
   {!! Form::label( 'company_id', 'Company') !!}
   {!! Form::select( 'company_id', $companyList, $user->company_id ) !!}
 
   {!! Form::label( 'role', 'Role') !!}
-  {!! Form::select( 'role', App\Role::orderBy( 'title' )->lists( 'title', 'slug' ), $user->role ) !!}
+  {!! Form::select( 'role', App\Role::orderBy( 'title' )->pluck( 'title', 'slug' ), $user->role ) !!}
   
   {!! Form::Label( 'user_status_id', 'Status' ) !!}
-  {!! Form::select( 'user_status_id', App\UserStatus::orderBy( 'id' )->lists( 'title', 'id' ), $user->user_status_id ) !!}
+  {!! Form::select( 'user_status_id', App\UserStatus::orderBy( 'id' )->pluck( 'title', 'id' ), $user->user_status_id ) !!}
 
 @endif
 

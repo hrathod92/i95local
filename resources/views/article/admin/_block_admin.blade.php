@@ -3,7 +3,7 @@
   $blockArticles = DB::table( 'articles' )
                  ->select( 'category_id', DB::raw( 'count(*) as total' ))
                  ->groupBy('category_id')
-                 ->lists( 'total', 'category_id' );
+                 ->pluck( 'total', 'category_id' );
 ?>
 <h3>Categories</h3>
 <ul class="dashboard-menu">

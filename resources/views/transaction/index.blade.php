@@ -18,9 +18,9 @@ $page['css'] = 'dashboard';
       <div class="form-element label-inline">
         {!! Form::label('account','Account:') !!}
         @if(\Auth::user()->role != 'admin')
-          {!! Form::select( 'account', [''=>''] + \Auth::user()->accounts->lists( 'title', 'id' )->all(), isset( $request ) ? $request->input('account') : '' ) !!}
+          {!! Form::select( 'account', [''=>''] + \Auth::user()->accounts->pluck( 'title', 'id' )->all(), isset( $request ) ? $request->input('account') : '' ) !!}
         @else
-          {!! Form::select( 'account', [''=>''] + \App\Account::orderBy('title')->get()->lists( 'title', 'id' )->all(), isset( $request ) ? $request->input('account') : '' ) !!}
+          {!! Form::select( 'account', [''=>''] + \App\Account::orderBy('title')->get()->pluck( 'title', 'id' )->all(), isset( $request ) ? $request->input('account') : '' ) !!}
         @endif
       </div>
       {!! Form::submit( 'Search', array('class'=>'btn btn-large btn-primary btn-block' )) !!}
@@ -42,11 +42,11 @@ $page['css'] = 'dashboard';
         @if ( isset( $items ))
             @foreach ( $items AS $item )
             <?php 
-              $order = \App\Order::find($item->order_id);
+              $order = \App\Order::find($item->order_id)->first();
             ?>
             <tr>
               <td class="id align-center nowrap" data-label="Order"><a href="/orders/{{ $order->id }}">{{ $order->id }}</a></td>
-              <td class="account" data-label="Title">{{ \App\Account::find($item->account_id)->title }}</td>
+              <td class="account" data-label="Title">{{ \App\Account::find($item->account_id)->first()->title }}</td>
               <td class="align-center nowrap" data-label="Created">{{ $item->created_at }}</td>
               <td class="align-center nowrap" data-label="Shipped">{{ $item->shipped_on }}</td>
               <td class="total align-center nowrap" data-label="Total">${{$item->total}}</td>

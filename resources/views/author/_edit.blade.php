@@ -1,13 +1,13 @@
 <?php 
     if(Auth::user()->role == 'agency'){
-        $companies = \App\Company::where('id', $author->company_id)->lists( 'title', 'id' );
-        $companyName =  \App\Company::find($author->company_id);
+        $companies = \App\Company::where('id', $author->company_id)->pluck( 'title', 'id' );
+        $companyName =  \App\Company::find($author->company_id)->first();
     }elseif(Auth::user()->role == 'admin'){
-        $companies = \App\Company::where('status_id', 0)->lists( 'title', 'id' );
-        $companyName = \App\Company::find(51);
+        $companies = \App\Company::where('status_id', 0)->pluck( 'title', 'id' );
+        $companyName = \App\Company::find(51)->first();
     }else{
-        $companyName = \App\Company::find( Auth::user()->company_id);
-        $companies = \App\Company::where('id', Auth::user()->company_id)->lists( 'title', 'id' );
+        $companyName = \App\Company::find( Auth::user()->company_id)->first();
+        $companies = \App\Company::where('id', Auth::user()->company_id)->pluck( 'title', 'id' );
     }
 ?>
 

@@ -2,7 +2,7 @@
   @if ( \Auth::user()->role == 'user' )
     {!! Form::hidden( 'company_id', \Auth::user()->company_id ) !!}
     <h4>Company</h4>
-    <p>{{ \App\Company::find( \Auth::user()->company_id )->title }}</p>
+    <p>{{ \App\Company::find( \Auth::user()->company_id )->first()->title }}</p>
   @elseif  ( \Auth::user()->role == 'admin' )
     {!! Form::label( 'company_id', 'Company') !!}
     {!! Form::select( 'company_id', \App\Company::lists( 'title', 'id' )) !!}

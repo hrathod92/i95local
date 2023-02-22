@@ -1,7 +1,7 @@
 <?php
 	$t = \Carbon\Carbon::now();
 	$blockInfo = \App\Ad::where('company_id', $id)->where('ad_type_id', 20)->where('status_id', 0)->where('publish_end_at', '>=', $t)->first();
-	if(count($blockInfo) == 0){
+	if(is_array($blockInfo) && count($blockInfo) == 0){
 		$blockInfo = \App\Ad::where('company_id', $id)->where('ad_type_id', 40)->where('status_id', 0)->where('publish_end_at', '>=', $t)->first();
 	}
 ?>

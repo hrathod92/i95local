@@ -37,20 +37,20 @@ class CampaignController extends Controller
 
     public function show($id)
     {
-        $data = Campaign::find( $id );
+        $data = Campaign::find( $id )->first();
         return view( 'campaign.show', $data );
     }
 
     public function edit($id)
     {
-        $data['campaign'] = Campaign::find( $id );
+        $data['campaign'] = Campaign::find( $id )->first();
         return view( 'campaign.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 		$input = \Input::except( array( 'submit', '_token', '_method' ));
-        $record = Campaign::find( $id );
+        $record = Campaign::find( $id )->first();
 		foreach ( $input AS $key => $value ) {
 			$record[$key] = $value;
 		}

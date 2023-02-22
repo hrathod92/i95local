@@ -12,6 +12,6 @@
 {!! Form::select( 'type', $typeSelect, isset( $faq->type ) ? $faq->type : 'guest' ) !!}
 
 {!! Form::Label( 'status_id', 'Overall Status (Admin)' ) !!} 
-{!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->lists( 'title', 'id' ), isset( $faq->status_id ) ? $faq->status_id : '' ) !!}
+{!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $faq->status_id ) ? $faq->status_id : '' ) !!}
 
 {!! Form::submit( 'Submit', array('class'=>'btn btn-large btn-primary btn-block' )) !!}

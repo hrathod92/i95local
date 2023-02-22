@@ -28,7 +28,7 @@ class VideoController extends Controller
 		$query = Video::with( 'video_type', 'status' );
 		if ( $video_type_id != 0 ){
 			$query = $query->where( 'video_type_id', $video_type_id );
-      		$type = \App\VideoType::find($video_type_id);
+      		$type = \App\VideoType::find($video_type_id)->first();
 			$data['type']= $type->title;
 		}
 		if ( $search_string = \Input::get( 'search_string' )) {
@@ -63,7 +63,7 @@ class VideoController extends Controller
 				->where( 'company_id', $id )
 				->orderBy( 'title' )
 				->get();
-			$data['company'] = Company::find( $id );
+			$data['company'] = Company::find( $id )->first();
 			return view( 'video.company', $data );
     }
 
@@ -90,20 +90,20 @@ class VideoController extends Controller
     public function show($id)
     {
 			Click::set( 'video', $id );
-      $data = Video::find( $id );
+      $data = Video::find( $id )->first();
       return view( 'video.show', $data );
     }
 
     public function edit( $id )
     {
-      $data['video'] = Video::find( $id );
+      $data['video'] = Video::find( $id )->first();
       return view( 'video.edit', $data );
     }
 
     public function update(Request $request, $id)
     {		
 		$input = \Input::except( array( 'submit', '_token', '_method' ));
-    $record = Video::find( $id );
+    $record = Video::find( $id )->first();
 		foreach ( $input AS $key => $value ) {
 			$record[$key] = $value;
 		}

@@ -10,12 +10,12 @@
 
 <div class='category-parent'>
   {!! Form::label( 'parent_id', 'Parent' ) !!}
-  {!! Form::select( 'parent_id', \App\Category::where( 'level', 0 )->orderBy( 'title' )->lists( 'title', 'id' ), isset( $item->parent_id ) ? $item->parent_id : '' ) !!}
+  {!! Form::select( 'parent_id', \App\Category::where( 'level', 0 )->orderBy( 'title' )->pluck( 'title', 'id' ), isset( $item->parent_id ) ? $item->parent_id : '' ) !!}
 </div>
 
 <div class="form-element">
   {!! Form::Label( 'status_id', 'Status' ) !!} 
-  {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->lists( 'title', 'id' ), isset( $category->status_id ) ? $category->status_id : 0 ) !!}
+  {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $category->status_id ) ? $category->status_id : 0 ) !!}
 </div>
 
 {!! Form::submit( 'Submit', array('class'=>'btn btn-large btn-primary btn-block category-btn' )) !!}

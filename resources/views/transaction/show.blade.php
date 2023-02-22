@@ -16,8 +16,8 @@
 
 <div class="item-page">
     <div class='item-wrapper'>
-      <h2 class='title'>Order - {!! \App\Order::find($order_id)->id !!}</h2>
-        <div>{{\App\Account::find($account_id)->title}}</div>
+      <h2 class='title'>Order - {!! \App\Order::find($order_id)->first()->id !!}</h2>
+        <div>{{\App\Account::find($account_id)->first()->title}}</div>
         <div>Created: {{$created_at}}</div>
         <div>Shipped On: {{$shipped_on}}</div>
         @if(isset($id) && $id > 0)
@@ -33,7 +33,7 @@
               <tbody>
                 <?php $transactionItems = \App\TransactionItem::where('transaction_id' , '=', $id)->get(); ?>
                 @foreach($transactionItems as $transactionItem)
-                    <?php $product = \App\Product::find($transactionItem->product_id); ?>
+                    <?php $product = \App\Product::find($transactionItem->product_id)->first(); ?>
                     <tr>
                         <td data-label="Product">
                             @if($product->image != null && strlen($product->image) > 0)

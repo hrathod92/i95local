@@ -1,5 +1,5 @@
 <?php
-    $company = \App\Company::find($special->id);
+    $company = \App\Company::find($special->id)->first();
 ?>
 
 {!! Form::model($company, ['method' => 'PATCH', 'route' => ['agency.profile.update', $company->id]]) !!}
@@ -70,11 +70,11 @@
       </div>
       <div class="form-element">
         {!! Form::Label( 'company_type_id', 'Company Type' ) !!} 
-        {!! Form::select( 'company_type_id', \App\CompanyType::orderBy( 'id' )->lists( 'title', 'id' ), isset( $company->company_type_id ) ? $company->company_type_id : 0 ) !!}
+        {!! Form::select( 'company_type_id', \App\CompanyType::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $company->company_type_id ) ? $company->company_type_id : 0 ) !!}
       </div>
       <div class="form-element">
         {!! Form::Label( 'status_id', 'Overall Status (Admin)' ) !!} 
-        {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->lists( 'title', 'id' ), isset( $company->status_id ) ? $company->status_id : '' ) !!}
+        {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $company->status_id ) ? $company->status_id : '' ) !!}
       </div>
     @endif
 

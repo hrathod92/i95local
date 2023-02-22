@@ -41,7 +41,7 @@ class ProductController extends Controller
 	
     public function show($id)
     {
-        $data = Product::with( 'product_type' )->with( 'status' )->find( $id );
+        $data = Product::with( 'product_type' )->with( 'status' )->find( $id )->first();
         return view( 'product.show', $data );
     }
 
@@ -84,7 +84,7 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        $data['item'] = Product::find( $id );
+        $data['item'] = Product::find( $id )->first();
         return view( 'product.edit', $data );
     }
 
@@ -107,7 +107,7 @@ class ProductController extends Controller
             }
         }
 
-		$record = Product::find( $id );
+		$record = Product::find( $id )->first();
 		foreach ( $input AS $key => $value ) {
 			$record[$key] = $value;
 		}

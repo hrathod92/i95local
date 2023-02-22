@@ -37,12 +37,12 @@ class JobController extends Controller
 		
 		if ( $job_type_id != 0){
 			$query = $query->where( 'job_type_id', $job_type_id );
-			$type = \App\JobType::find($job_type_id);
+			$type = \App\JobType::find($job_type_id)->first();
 			$data['type'] = $type->title;
 		}
 
 		if ( $search_string = \Input::get( 'search_string' )) $query = $query->where( 'job_title', 'LIKE', '%' . $search_string . '%' );
-		$expDays = \App\Setting::where( 'slug', 'jobs-expiration' )->pluck( 'body' );
+		$expDays = \App\Setting::where( 'slug', 'jobs-expiration' )->pluck( 'body' )->first();
 		$expDate = Carbon::now()->subDays( $expDays );
 		$data['items'] = $query->where( 'created_at', '>=', $expDate )
 			->orderBy( 'id', 'DESC' )
@@ -79,7 +79,7 @@ class JobController extends Controller
 			->where( 'company_id', $id )
 			->orderBy('id', 'desc')
 			->get();
-		$data['company'] = Company::find( $id );
+		$data['company'] = Company::find( $id )->first();
 		return view('job.company', $data);
 	}
 
@@ -87,7 +87,7 @@ class JobController extends Controller
 	{
 		Click::set( 'job', $id );
 		if( isset( \Auth::user()->id ) || session()->get( 'job-email' ) != '' ) {
-			$data['item'] = Job::find( $id );
+			$data['item'] = Job::find( $id )->first();
 			return view('job.show', $data);
 		} else {
 			session([ 'current-job-id' => $id ]);
@@ -107,7 +107,7 @@ class JobController extends Controller
 				$captured_email->email = $email;
 				$captured_email->save();
 			}	
-			$item = Job::find( $id );
+			$item = Job::find( $id )->first();
 			return redirect()->route('jobs.show', $item );
 		} else {
 			return view( 'job.email_required' )->with( 'message', 'Please enter a valid email address.' );
@@ -127,14 +127,14 @@ class JobController extends Controller
 
 	public function edit( $id )
 	{
-		$data['item'] = Job::find( $id );
+		$data['item'] = Job::find( $id )->first();
 		return view('job.edit', $data);
 	}
 
 	public function update( Request $request, $id )
 	{
 		$input = \Input::except( array( 'submit', '_token', '_method' ));
-		$record = Job::find( $id );
+		$record = Job::find( $id )->first();
 		foreach ( $input AS $key => $value ) $record[$key] = $value;
 		$record->save();
 		$record->preview = true;

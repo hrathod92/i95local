@@ -25,7 +25,7 @@ class VideoTypeController extends Controller
   
   public function show( $id )
   {
-    $data = VideoType::find( $id );
+    $data = VideoType::find( $id )->first();
     return view( 'video-type.show', $data );
   }
 

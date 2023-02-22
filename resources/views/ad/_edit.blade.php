@@ -6,17 +6,17 @@
   ?>
 
   @if ( \Auth::check() && \Auth::user()->role == 'admin' )
-    {!! Form::select( 'company_id', \App\Company::whereNotNull('title')->where('title', '!=', '')->orderBy( 'id' )->lists( 'title', 'id' ), $company_id) !!}
+    {!! Form::select( 'company_id', \App\Company::whereNotNull('title')->where('title', '!=', '')->orderBy( 'id' )->pluck( 'title', 'id' ), $company_id) !!}
   @else
 		{!! Form::hidden( 'company_id', $company_id ) !!}
-    {!! Form::select( 'company_id', \App\Company::whereId( $company_id )->lists( 'title', 'id' ), $company_id, ["disabled" => "disabled"]) !!}
+    {!! Form::select( 'company_id', \App\Company::whereId( $company_id )->pluck( 'title', 'id' ), $company_id, ["disabled" => "disabled"]) !!}
   @endif
 </div>
 
 @if ( \Auth::check() && \Auth::user()->role == 'admin' )
   <div class="form-element">
     {!! Form::Label( 'ad_type_id', 'Ad Position' ) !!} 
-    {!! Form::select( 'ad_type_id', \App\AdType::orderBy( 'title' )->lists( 'title', 'id' ), isset( $ad->ad_type_id ) ? $ad->ad_type_id : '' ) !!}
+    {!! Form::select( 'ad_type_id', \App\AdType::orderBy( 'title' )->pluck( 'title', 'id' ), isset( $ad->ad_type_id ) ? $ad->ad_type_id : '' ) !!}
   </div>
 @endif
 
@@ -84,13 +84,13 @@
 
 <div class="form-element">
   {!! Form::Label( 'publish_status_id', 'Publish Status' ) !!} 
-  {!! Form::select( 'publish_status_id', \App\PublishStatus::orderBy( 'id' )->lists( 'title', 'id' ), isset( $ad->publish_status_id ) ? $ad->publish_status_id : 1 ) !!}
+  {!! Form::select( 'publish_status_id', \App\PublishStatus::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $ad->publish_status_id ) ? $ad->publish_status_id : 1 ) !!}
 </div>
 
 @if ( \Auth::user()->role == 'admin' )
   <div class="form-element">
     {!! Form::Label( 'status_id', 'Status' ) !!} 
-    {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->lists( 'title', 'id' ), isset( $ad->status_id ) ? $ad->status_id : 0 ) !!}
+    {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $ad->status_id ) ? $ad->status_id : 0 ) !!}
   </div>
 @endif
 

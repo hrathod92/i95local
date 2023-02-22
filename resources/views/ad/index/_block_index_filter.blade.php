@@ -1,12 +1,12 @@
 <?php 
-  $companies = \App\Company::orderBy( 'title' )->lists( 'title', 'id' );
+  $companies = \App\Company::orderBy( 'title' )->pluck( 'title', 'id' );
   $companies->prepend( 'All', 0 );
 	foreach ( $companies AS $company ) $company = \App\Helpers\Display::teaser( $company, 20 );
 
-  $adTypes = \App\AdType::orderBy( 'id' )->lists( 'title', 'id' );
+  $adTypes = \App\AdType::orderBy( 'id' )->pluck( 'title', 'id' );
   $adTypes->prepend( 'All', -1 );
 
-  $statues = \App\Status::orderBy( 'id' )->lists( 'title', 'id' );
+  $statues = \App\Status::orderBy( 'id' )->pluck( 'title', 'id' );
   $statues->prepend( 'All', -1 );
 
 ?>

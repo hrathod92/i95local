@@ -1,6 +1,6 @@
 <?php 
     if($company_id != 0){
-      $company_name = \App\Company::find($company_id)->title;
+      $company_name = \App\Company::find($company_id)->first()->title;
     }
 ?>
 @if(!empty($company_name))

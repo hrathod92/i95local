@@ -33,7 +33,7 @@ class FeedController extends Controller
   
     public function show($id)
     {
-      $data = Feed::find( $id );
+      $data = Feed::find( $id )->first();
       return view( 'feed.show', $data );
     }
 
@@ -52,14 +52,14 @@ class FeedController extends Controller
 
     public function edit($id)
     {
-      $data['item'] = Feed::find( $id );
+      $data['item'] = Feed::find( $id )->first();
       return view( 'feed.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
         $input = \Input::except( array( 'submit', '_token', '_method', 'uploadfile' ));
-        $record = Feed::find( $id );
+        $record = Feed::find( $id )->first();
         foreach ( $input AS $key => $value )
         {
             $record[$key] = $value;
@@ -70,14 +70,14 @@ class FeedController extends Controller
 
     public function destroy($id)
     {
-        $data= Feed::find($id);
+        $data= Feed::find($id)->first();
         $data->delete();
         return redirect( '/feeds' );
     }
 
     public function remove(Request $request)
     {
-        $feed = Feed::find($request->input('feed_id'));
+        $feed = Feed::find($request->input('feed_id'))->first();
         $feed->delete();
         return redirect( '/feeds/admin' );
     }

@@ -8,7 +8,7 @@
   {!! Form::textarea( 'body' ) !!}
 </div>
 
-<?php $yearSelect = \App\NewsletterYear::where( 'title', '<=', date( 'Y', strtotime( '+1 year' )))->orderBy( 'title', 'DESC')->lists( 'title', 'title' ); ?>
+<?php $yearSelect = \App\NewsletterYear::where( 'title', '<=', date( 'Y', strtotime( '+1 year' )))->orderBy( 'title', 'DESC')->pluck( 'title', 'title' ); ?>
 <div class="form-element">
   {!! Form::Label( 'newsletter_year', 'Newsletter Year' ) !!}
   {!! Form::select( 'newsletter_year', $yearSelect, isset( $newsletter->newsletter_year ) ? $newsletter->newsletter_year : date( 'Y' ) ) !!}
@@ -30,7 +30,7 @@
 
 <div class="form-element">
   {!! Form::Label( 'status_id', 'Status' ) !!}
-  {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->lists( 'title', 'id' ), isset( $newsletter->status_id ) ? $newsletter->status_id : '' ) !!}
+  {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $newsletter->status_id ) ? $newsletter->status_id : '' ) !!}
 </div>
 
 <div class="form-actions">

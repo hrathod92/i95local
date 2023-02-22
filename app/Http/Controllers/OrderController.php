@@ -146,7 +146,7 @@ class OrderController extends Controller
         }
 
 
-        $product = Product::find($input['subscription']);
+        $product = Product::find($input['subscription'])->first();
         $orderData = [
             'title' => 'Order of ' . $product->title,
             'body' => $input['body'],
@@ -208,20 +208,20 @@ class OrderController extends Controller
 
     public function show($id)
     {
-        $data = Order::find($id);
+        $data = Order::find($id)->first();
         return view('order.show', ["data"=> $data]);
     }
 
     public function edit($id)
     {
-        $data['order'] = Order::find($id);
+        $data['order'] = Order::find($id)->first();
         return view('order.edit', $data);
     }
 
     public function update(Request $request, $id)
     {
         $input = \Input::except(array('submit', '_token', '_method'));
-        $record = Order::find($id);
+        $record = Order::find($id)->first();
         foreach ($input AS $key => $value) {
             $record[$key] = $value;
         }

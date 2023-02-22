@@ -2,7 +2,7 @@
   {!! Form::open(['url' => '/product/search']) !!}
 
     {!! Form::select( 'category_id', \App\Category::orderBy( 'parent_id' )->orderBy( 'level' )
-      ->lists( 'title', 'id' ), null, [ 'class' => 'search-category' ] ) !!}
+      ->pluck( 'title', 'id' ), null, [ 'class' => 'search-category' ] ) !!}
 
     {!! Form::text( 'search_text', null, array( 'class' => 'search-text' )) !!}
   

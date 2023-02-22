@@ -1,4 +1,4 @@
-<?php $page['title'] = date( 'F Y', strtotime( $title )) . ' Magazine'; ?>
+<?php $page['title'] = !empty($title) ? date( 'F Y', strtotime( $title )) . ' Magazine' : null; ?>
 <?php $page['sideblocks'] = [ 'ad._block_ads_side' ]; ?>
 <?php $page['css'] = 'newsletter-show'; ?>
 
@@ -28,7 +28,7 @@
   @endif
   
   <div class='newsletter-read'>
-    <a class='button' href='/data/newsletters/document/{{ $document }}' target='_blank'>Read Document</a>
+    <a class='button' href='/data/newsletters/document/{{ isset( $document ) ? $document : '' }}' target='_blank'>Read Document</a>
   </div>
 
 </div>

@@ -34,20 +34,20 @@ class SettingController extends Controller
 
     public function show($id)
     {
-        $data = Setting::find( $id );
+        $data = Setting::find( $id )->first();
         return view( 'setting.show', $data );
     }
 
     public function edit($id)
     {
-        $data['setting'] = Setting::find( $id );
+        $data['setting'] = Setting::find( $id )->first();
         return view( 'setting.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 		$input = \Input::except( array( 'submit', '_token', '_method' ));
-        $record = Setting::find( $id );
+        $record = Setting::find( $id )->first();
 		foreach ( $input AS $key => $value ) {
 			$record[$key] = $value;
 		}

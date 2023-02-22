@@ -21,7 +21,7 @@ class AgencyController extends Controller
 			->where( 'company_type_id', 2 )
 			->orderBy( 'title', 'asc' )
 			->get();
-		$data['status'] = Status::find( $status_id )->title;
+		$data['status'] = Status::find( $status_id )->first()->title;
 		return view( 'agency.admin', $data );
     }
 	
@@ -45,7 +45,7 @@ class AgencyController extends Controller
 
     public function edit( $id )
     {
-		$data['company'] = Company::find( $id );
+		$data['company'] = Company::find( $id )->first();
 		$data['clients'] = AgencyCompany::where('agency_id', $data['company']['id'])->get();
 		return view( 'agency.edit', $data );
     }
@@ -53,7 +53,7 @@ class AgencyController extends Controller
     public function user()
     {
 		$id = \Auth::user()->company_id;
-		$data['company'] = Company::find( $id );
+		$data['company'] = Company::find( $id )->first();
 		return view( 'agency.edit', $data );
     }
 	
@@ -62,7 +62,7 @@ class AgencyController extends Controller
         if(!is_numeric($id)){
             $data = Company::where('slug', $id)->get();
         }else{
-            $data = Company::find( $id );
+            $data = Company::find( $id )->first();
         }
 		return view( 'agency.show', $data )->withCompany( $data );
     }
@@ -70,7 +70,7 @@ class AgencyController extends Controller
     public function update( Request $request, $id )
     {
 		$input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete' ));
-		$record = Company::find( $id );
+		$record = Company::find( $id )->first();
 		foreach ( $input AS $key => $value ) $record[$key] = $value;
 		$record['image'] = $this->image_upload( $request, $id, $record->image );
 		$record->save();
@@ -118,7 +118,7 @@ class AgencyController extends Controller
 	public function profileUpdate( Request $request, $id )
     {
 		$input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete' ));
-		$record = Company::find( $id );
+		$record = Company::find( $id )->first();
 		foreach ( $input AS $key => $value ) $record[$key] = $value;
 		$record['image'] = $this->image_upload( $request, $id, $record->image );
 		$record->save();

@@ -29,7 +29,7 @@
 
 @if ( \Auth::user()->role == 'admin' )
 	<?php 
-    $companyList = App\Company::orderBy( 'title' )->lists( 'title', 'id' );
+    $companyList = App\Company::orderBy( 'title' )->pluck( 'title', 'id' );
     $companyList->prepend('None', 0);
   ?>
 
@@ -37,10 +37,10 @@
   {!! Form::select( 'company_id', $companyList) !!}
 
   {!! Form::label( 'role', 'Role') !!}
-  {!! Form::select( 'role', App\Role::orderBy( 'id' )->lists( 'title', 'slug' )) !!}
+  {!! Form::select( 'role', App\Role::orderBy( 'id' )->pluck( 'title', 'slug' )) !!}
 
   {!! Form::Label( 'user_status_id', 'Status' ) !!}
-  {!! Form::select( 'user_status_id', App\UserStatus::orderBy( 'id' )->lists( 'title', 'id' )) !!}
+  {!! Form::select( 'user_status_id', App\UserStatus::orderBy( 'id' )->pluck( 'title', 'id' )) !!}
 
 @endif
 

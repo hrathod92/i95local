@@ -14,7 +14,7 @@
 
     @if(isset($order["subscription"]))
         <?php
-            $product = \App\Product::find($order["subscription"]);
+            $product = \App\Product::find($order["subscription"])->first();
         ?>
 
         <div>

@@ -5,7 +5,7 @@
     {!! Form::hidden( 'agree', 'agree' ) !!}
     {!! Form::Label( 'company_id', 'Company' ) !!} 
     {!! Form::select( 'company_id', 
-      \App\Company::orderBy( 'id' )->lists( 'title', 'id' )->prepend( 'None', 0 ), 
+      \App\Company::orderBy( 'id' )->pluck( 'title', 'id' )->prepend( 'None', 0 ), 
       !empty( $event->company_id ) ? $event->company_id : 0 ) 
     !!}
   @else
@@ -28,7 +28,7 @@
 @else
   {!! Form::label( 'event_type_id', 'Type') !!}
   {!! Form::select( 'event_type_id', 
-    App\EventType::where( 'id', '!=', 1 )->lists( 'title', 'id' ), 
+    App\EventType::where( 'id', '!=', 1 )->pluck( 'title', 'id' ), 
     isset( $event->event_type_id ) ? $event->event_type_id : 20 ) 
   !!}
 @endif

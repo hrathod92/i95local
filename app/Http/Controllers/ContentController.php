@@ -13,7 +13,7 @@ class ContentController extends Controller
     public function __construct()
 		{
 				$this->middleware('site');
-        $this->beforeFilter( 'csrf', array('on'=>'post'));
+        // $this->beforeFilter( 'csrf', array('on'=>'post'));
     }
 
     public function content( Request $request, $slug )
@@ -73,20 +73,20 @@ class ContentController extends Controller
 
     public function show($id)
     {
-        $data = Content::find( $id );
+        $data = Content::find( $id )->first();
         return view( 'content.show', $data );
     }
 
     public function edit($id)
     {
-        $data['content'] = Content::find( $id );
+        $data['content'] = Content::find( $id )->first();
         return view( 'content.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 		$input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete' ));
-    $record = Content::find( $id );
+    $record = Content::find( $id )->first();
 		foreach ( $input AS $key => $value ) {
 			$record[$key] = $value;
 		}
@@ -108,7 +108,7 @@ class ContentController extends Controller
 
     public function destroy($id)
     {
-        $data= Content::find($id);
+        $data= Content::find($id)->first();
         $data->delete();
         $this->index();
     }

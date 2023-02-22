@@ -98,7 +98,7 @@ class AdSelect {
           }
         }
       }
-      $picked = Ad::find($pick); 
+      $picked = Ad::find($pick)->first(); 
     }elseif(count($ads) == 1){
       $picked = $ads[0];
     }else{

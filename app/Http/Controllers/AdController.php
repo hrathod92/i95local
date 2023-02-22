@@ -86,7 +86,7 @@ class AdController extends Controller
   
     public function view($id)
     {
-      $data['item'] = Ad::with( 'ad_type' )->find( $id );
+      $data['item'] = Ad::with( 'ad_type' )->find( $id )->first();
       return view('ad.show', $data);
     }
 
@@ -164,7 +164,7 @@ class AdController extends Controller
     public function update(Request $request, $id)
     {
     $input  = \Input::except(['submit', '_token', '_method', 'image','image_delete']);
-    $record = Ad::find($id);
+    $record = Ad::find($id)->first();
       if ( !isset( $input["company_id"] ) || !$this->isValidCompany( $input["company_id"] )) {
           return back()->withInput( $input )->withErrors( ["Not valid company"] );
       }
@@ -213,7 +213,7 @@ class AdController extends Controller
     }
   
   public function destroy($id){
-    $ads = Ad::find($id);
+    $ads = Ad::find($id)->first();
     $ads->delete();
     
     return redirect('ads');

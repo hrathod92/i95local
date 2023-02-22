@@ -1,5 +1,5 @@
 <?php 
-  $videoTypes = \App\VideoType::orderBy( 'id' )->lists( 'title', 'id' );
+  $videoTypes = \App\VideoType::orderBy( 'id' )->pluck( 'title', 'id' );
   $videoTypes->prepend( 'All', 0 );
 ?>
 

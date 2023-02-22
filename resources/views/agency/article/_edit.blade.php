@@ -16,14 +16,14 @@
 {!! Form::hidden('company_id', $id) !!}
 
 <?php 
-	$selectAuthors = \App\Author::where( 'company_id', $id )->orderBy( 'title' )->lists( 'title', 'id' )->prepend( 'None', 0 );
+	$selectAuthors = \App\Author::where( 'company_id', $id )->orderBy( 'title' )->pluck( 'title', 'id' )->prepend( 'None', 0 );
 ?>
 <div class="form-element">
   {!! Form::Label( 'author_id', 'Author' ) !!} 
   {!! Form::select( 'author_id', $selectAuthors, isset( $article->author_id ) ? $article->author_id : '' ) !!}
 </div>
 
-<?php $emailQueueStatuses = \App\EmailQueueStatus::orderBy( 'id' )->lists( 'title', 'id' ) ?>
+<?php $emailQueueStatuses = \App\EmailQueueStatus::orderBy( 'id' )->pluck( 'title', 'id' ) ?>
 <div class="form-element">
   {!! Form::Label( 'email_queue_status_id', 'Email Queue Status' ) !!}
   {!! Form::select( 'email_queue_status_id', $emailQueueStatuses, isset( $article->email_queue_status_id ) ? $article->email_queue_status_id : 0 ) !!}
@@ -54,7 +54,7 @@
 
 <div class="form-element">
   {!! Form::Label( 'newsletter_id', 'Issue Date' ) !!} 
-  {!! Form::select( 'newsletter_id', \App\Newsletter::orderBy( 'title', 'desc' )->lists( 'title', 'id' )->prepend( 'None', 0 ), isset( $article->newsletter_id ) ? $article->newsletter_id : '' ) !!}
+  {!! Form::select( 'newsletter_id', \App\Newsletter::orderBy( 'title', 'desc' )->pluck( 'title', 'id' )->prepend( 'None', 0 ), isset( $article->newsletter_id ) ? $article->newsletter_id : '' ) !!}
 </div>
 
 <?php 
@@ -101,7 +101,7 @@
 		{!! Form::select( 'category_5_id', $categories, isset( $article->category_5_id ) ? $article->category_5_id : 0 ) !!}
 	</div>
 @else
-	<?php $formCategory = \App\Category::orderBy( 'id' )->lists( 'title', 'id' ); ?>
+	<?php $formCategory = \App\Category::orderBy( 'id' )->pluck( 'title', 'id' ); ?>
 	<div class='form-element'>
 		<div>Category 4: {{ isset( $article->category_4_id ) ? $formCategory[ $article->category_4_id ] : 'None' }}</div>
 		<div>Category 5: {{ isset( $article->category_5_id ) ? $formCategory[ $article->category_5_id ] : 'None' }}</div>
@@ -198,7 +198,7 @@
 <?php $publishStatuses = \App\PublishStatus::orderBy( 'id' )->get(); ?>
 <div class="form-element">
   {!! Form::Label( 'publish_status_id', 'Publish Status (User)' ) !!} 
-  {!! Form::select( 'publish_status_id', $publishStatuses->lists( 'title', 'id' ), isset( $article->publish_status_id ) ? $article->publish_status_id : '' ) !!}
+  {!! Form::select( 'publish_status_id', $publishStatuses->pluck( 'title', 'id' ), isset( $article->publish_status_id ) ? $article->publish_status_id : '' ) !!}
   <!--
 	<ul>
     @foreach ( $publishStatuses AS $publishStatus )

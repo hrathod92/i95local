@@ -15,7 +15,7 @@
 @section( 'content' )
 
 <div id='contact-info'>
-	{!! \App\Block::where( 'slug', '=', 'contact-info' )->pluck( 'body' ) !!}
+	{!! \App\Block::where( 'slug', '=', 'contact-info' )->pluck( 'body' )->first() !!}
 </div>
 
 @if (count($errors) > 0)
@@ -28,7 +28,7 @@
     </div>
 @endif
 
-{!! App\Content::where( 'slug', '=', 'contact-us' )->pluck( 'body' ) !!}
+{!! App\Content::where( 'slug', '=', 'contact-us' )->pluck( 'body' )->first() !!}
 
 <!--[if lte IE 8]> 
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script> 

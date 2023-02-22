@@ -30,20 +30,20 @@ class FaqController extends Controller
 
     public function show($id)
     {
-			$data = Faq::find( $id );
+			$data = Faq::find( $id )->first();
 			return view( 'faq.show', $data );
     }
 
     public function edit($id)
     {
-			$data['faq'] = Faq::find( $id );
+			$data['faq'] = Faq::find( $id )->first();
 			return view( 'faq.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 			$input = \Input::except( array( 'submit', '_token', '_method' ));
-			$record = Faq::find( $id );
+			$record = Faq::find( $id )->first();
 			foreach ( $input AS $key => $value ) {
 				$record[$key] = $value;
 			}

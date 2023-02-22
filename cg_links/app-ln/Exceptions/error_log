@@ -1,3 +1,0 @@
-[21-Sep-2017 20:35:24 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/cgdev2/public_html/i95/app/Exceptions/Handler.php on line 12
-[04-Oct-2017 08:08:21 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/cgdev2/public_html/i95/app/Exceptions/Handler.php on line 12
-[12-Oct-2017 13:17:37 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/cgdev2/public_html/i95/app/Exceptions/Handler.php on line 12

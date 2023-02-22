@@ -62,22 +62,22 @@ class Article extends Model
 	
 	public function getCatStrWithAnchors() {
 		$cat = '<a href="/articles/category/' . $this->category['slug'] . '">' . $this->category['title'] . '</a>';
-		if ( isset( $this->category_2_id ) && $this->category_2_id != 0 )
+		if ( isset( $this->category_2_id ) && $this->category_2_id != 0 && isset($this->category2['slug']))
 			$cat .= ' | <a href="/articles/category/' . $this->category2['slug'] . '">' . $this->category2['title'] . '</a>';
-		if ( isset( $this->category_3_id ) && $this->category_3_id != 0 )
+		if ( isset( $this->category_3_id ) && $this->category_3_id != 0 && isset($this->category3['slug']))
 			$cat .= ' | <a href="/articles/category/' . $this->category3['slug'] . '">' . $this->category3['title'] . '</a>';
 		return $cat;
 	}
 	
 	public function get5CatStrWithAnchors() {
 		$cat = '<a href="/articles/category/' . $this->category['slug'] . '">' . $this->category['title'] . '</a>';
-		if ( isset( $this->category_2_id ) && $this->category_2_id != 0 )
+		if ( isset( $this->category_2_id ) && $this->category_2_id != 0 && isset($this->category2['slug']))
 			$cat .= ' | <a href="/articles/category/' . $this->category2['slug'] . '">' . $this->category2['title'] . '</a>';
-		if ( isset( $this->category_3_id ) && $this->category_3_id != 0 )
+		if ( isset( $this->category_3_id ) && $this->category_3_id != 0 && isset($this->category3['slug']))
 			$cat .= ' | <a href="/articles/category/' . $this->category3['slug'] . '">' . $this->category3['title'] . '</a>';
-		if ( isset( $this->category_4_id ) && $this->category_4_id != 0 )
+		if ( isset( $this->category_4_id ) && $this->category_4_id != 0 && isset($this->category4['slug']))
 			$cat .= ' | <a href="/articles/category/' . $this->category4['slug'] . '">' . $this->category4['title'] . '</a>';
-		if ( isset( $this->category_5_id ) && $this->category_5_id != 0 )
+		if ( isset( $this->category_5_id ) && $this->category_5_id != 0 && isset($this->category5['slug']))
 			$cat .= ' | <a href="/articles/category/' . $this->category5['slug'] . '">' . $this->category5['title'] . '</a>';
 		return $cat;
 	}

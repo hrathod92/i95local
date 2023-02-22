@@ -37,20 +37,20 @@ class BlockController extends Controller
 
     public function show($id)
     {
-			$data = Block::find( $id );
+			$data = Block::find( $id )->first();
 			return view( 'block.show', $data );
     }
 
     public function edit($id)
     {
-			$data['block'] = Block::find( $id );
+			$data['block'] = Block::find( $id )->first();
 			return view( 'block.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 			$input = \Input::except( array( 'submit', '_token', '_method', 'image' ));
-			$record = Block::find( $id );
+			$record = Block::find( $id )->first();
 			foreach ( $input AS $key => $value ) {
 				$record[$key] = $value;
 			}
@@ -73,7 +73,7 @@ class BlockController extends Controller
 	
 		public function addSite(Request $request)
 		{
-				$block = Block::find($request->block_id);
+				$block = Block::find($request->block_id)->first();
 				
 				$addSite = true;
 			
@@ -98,7 +98,7 @@ class BlockController extends Controller
 	
 		public function removeSite(Request $request)
 		{
-				$block = Block::find($request->block_id);
+				$block = Block::find($request->block_id)->first();
 				$block->sites()->detach($request->site_id);
 			
 				return redirect('/blocks/'.$block->id.'/edit');

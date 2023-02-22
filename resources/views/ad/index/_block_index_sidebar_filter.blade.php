@@ -1,14 +1,14 @@
 <?php 
-  $companies = \App\Company::orderBy( 'title' )->lists( 'title', 'id' );
+  $companies = \App\Company::orderBy( 'title' )->pluck( 'title', 'id' );
   $companies->prepend( 'All', 0 );
 	foreach ( $companies AS $company ) $company = \App\Helpers\Display::teaser( $company, 20 );
 
-  $adTypes = \App\AdType::orderBy( 'title' )->lists( 'title', 'id' );
+  $adTypes = \App\AdType::orderBy( 'title' )->pluck( 'title', 'id' );
   $adTypes->prepend( 'All', -1 );
 
-  $statues = \App\Status::orderBy( 'id' )->lists( 'title', 'id' );
+  $statues = \App\Status::orderBy( 'id' )->pluck( 'title', 'id' );
 
-	$categories = \App\Category::where('id', '!=', 0)->where('status_id', 0)->orderBy( 'id' )->lists( 'title', 'id' );
+	$categories = \App\Category::where('id', '!=', 0)->where('status_id', 0)->orderBy( 'id' )->pluck( 'title', 'id' );
   $categories->prepend( 'All', -1 );
 ?>
 

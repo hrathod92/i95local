@@ -9,7 +9,7 @@ class Email {
 
 public static function newArticle($id)
     {			
-      	$item = \App\Article::find($id);
+      	$item = \App\Article::find($id)->first();
 	  	$setting = \App\Setting::where('slug', 'notification_emails')->first();
 		$emails = explode(', ', $setting->body);
 
@@ -27,7 +27,7 @@ public static function newArticle($id)
 public static function newAd($id)
     {			
 		$error  = null;
-		$item = \App\Company::find($id);
+		$item = \App\Company::find($id)->first();
 
 		if(!empty($item->email)){
 			$error = Mail::send('emails.advert', $item->toArray(), function ($message) use ($item)
@@ -42,7 +42,7 @@ public static function newAd($id)
 	
 public static function articleSubmitted($id)
     {			
-      	$item = \App\Article::find($id);
+      	$item = \App\Article::find($id)->first();
 	  	$setting = \App\Setting::where('slug', 'notification_emails')->first();
 		$emails = explode(', ', $setting->body);
 	  	foreach($emails as $key => $value){

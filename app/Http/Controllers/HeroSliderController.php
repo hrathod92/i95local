@@ -55,14 +55,14 @@ class HeroSliderController extends Controller
 
     public function show($id)
     {
-		$data = HeroSlider::find( $id );
+		$data = HeroSlider::find( $id )->first();
 		
 		return view( 'hero_slider.show', $data );
     }
 
     public function edit($id)
     {
-		$data['slider'] = HeroSlider::find( $id );
+		$data['slider'] = HeroSlider::find( $id )->first();
 			
 		return view( 'hero_slider.edit', $data );
     }
@@ -71,7 +71,7 @@ class HeroSliderController extends Controller
     {
 		$input = \Input::except( array( 'submit', '_token', '_method', 'uploadfile' ));
 		
-		$record = HeroSlider::find( $id );
+		$record = HeroSlider::find( $id )->first();
 		
 		foreach ( $input AS $key => $value ) 
 		{
@@ -95,7 +95,7 @@ class HeroSliderController extends Controller
 
     public function destroy($id)
     {
-        $data= HeroSlider::find($id);
+        $data= HeroSlider::find($id)->first();
         $data->delete();
         return redirect('/sliders');
     }

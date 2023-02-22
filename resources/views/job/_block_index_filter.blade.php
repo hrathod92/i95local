@@ -1,5 +1,5 @@
 <?php 
-  $jobTypes = \App\JobType::orderBy( 'id' )->lists( 'title', 'id' );
+  $jobTypes = \App\JobType::orderBy( 'id' )->pluck( 'title', 'id' );
   $jobTypes->prepend( 'All', 0 );
 ?>
 

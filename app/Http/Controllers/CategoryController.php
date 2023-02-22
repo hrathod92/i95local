@@ -16,7 +16,7 @@ class CategoryController extends Controller
 	{
 		$this->middleware( 'auth', [ 'except' => [ 'index', 'show' ]]);
 		//$this->middleware( 'role:admin', [ 'except' => [ 'index', 'show' ]]);
-		//$this->beforeFilter( 'csrf', array( 'on'=>'post' ));
+		//// $this->beforeFilter( 'csrf', array( 'on'=>'post' ));
 		$this->middleware('site');
 	}
 
@@ -36,7 +36,7 @@ class CategoryController extends Controller
 
 	public function show($id)
 	{
-		$data['item'] = Category::with( 'parent' )->find( $id );
+		$data['item'] = Category::with( 'parent' )->find( $id )->first();
 		return view( 'category.show', $data );
 	}
 
@@ -56,14 +56,14 @@ class CategoryController extends Controller
 
 	public function edit($id)
 	{
-		$data['item'] = Category::find( $id );
+		$data['item'] = Category::find( $id )->first();
 		return view( 'category.edit', $data );
 	}
 
 	public function update(Request $request, $id)
 	{
 		$input = \Input::except( array( 'submit', '_token', '_method' ));
-		$record = Category::find( $id );
+		$record = Category::find( $id )->first();
 		foreach ( $input AS $key => $value ) $record[$key] = $value;
 		$record->save();
 		return redirect( '/categories' );
@@ -71,7 +71,7 @@ class CategoryController extends Controller
 
 	public function destroy($id)
 	{
-		$data = Category::find($id);
+		$data = Category::find($id)->first();
 		$data->delete();
 		if($data->parent_id != 0) return redirect('/categories/'.$data->parent_id.'/edit');
 		return redirect('/categories');

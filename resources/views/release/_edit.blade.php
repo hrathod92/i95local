@@ -2,7 +2,7 @@
   @if ( \Auth::user()->role == 'admin' )
     <div class="form-element">
       {!! Form::label( 'company_id', 'Company' ) !!}
-      {!! Form::select( 'company_id', \App\Company::orderBy( 'id' )->lists( 'title', 'id' ), isset( $release->company_id ) ? $release->company_id : \Auth::user()->company_id ) !!}
+      {!! Form::select( 'company_id', \App\Company::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $release->company_id ) ? $release->company_id : \Auth::user()->company_id ) !!}
     </div>
   @else
     {!! Form::hidden( 'company_id', isset( $release->company_id ) ? $release->company_id : \Auth::user()->company_id ) !!}
@@ -13,7 +13,7 @@
 
 <div class="form-element">
   {!! Form::Label( 'release_type_id', 'ReleaseType' ) !!} 
-  {!! Form::select( 'release_type_id', \App\ReleaseType::orderBy( 'id' )->lists( 'title', 'id' ), isset( $release->release_type_id ) ? $release->release_type_id : '' ) !!}
+  {!! Form::select( 'release_type_id', \App\ReleaseType::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $release->release_type_id ) ? $release->release_type_id : '' ) !!}
 </div>
 
 <div class="form-element">
@@ -53,7 +53,7 @@
 @if ( \Auth::check() && \Auth::user()->role == 'admin' )
   <div class="form-element">
     {!! Form::Label( 'status_id', 'Status' ) !!} 
-    {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->lists( 'title', 'id' ), isset( $release->status_id ) ? $release->status_id : 0 ) !!}
+    {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $release->status_id ) ? $release->status_id : 0 ) !!}
   </div>
 @endif
 

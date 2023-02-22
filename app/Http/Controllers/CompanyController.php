@@ -31,21 +31,21 @@ class CompanyController extends Controller
 			->where( 'company_type_id','!=', 2 )
 			->orderBy( 'title', 'asc' )
 			->get();
-		$data['status'] = Status::find( $status_id )->title;
+		$data['status'] = Status::find( $status_id )->first()->title;
 		return view( 'company.admin', $data );
     }
 	
 	public function company()
     {
 		$id = \Auth::user()->company_id;
-		$data = Company::find( $id );
+		$data = Company::find( $id )->first();
 		return view( 'company.show', $data )->withCompany( $data );
     }
 	
     public function show($id) { // $id can be a int or a string (slug)
         if(!is_numeric($id)){$id = Company::where('slug', $id)->pluck('id');}
         if(!isset($id)){$id = 1;} // Just in case. 
-        $data = Company::find( $id );
+        $data = Company::find( $id )->first();
         return view( 'company.show', $data )->withCompany( $data );
     }
     
@@ -70,21 +70,21 @@ class CompanyController extends Controller
 
     public function edit( $id )
     {
-		$data['company'] = Company::find( $id );
-		return view( 'company.edit', $data );
+		$data['company'] = Company::find( $id )->first();
+		return view( 'company.edit', $data )->first();
     }
 	
     public function user()
     {
 		$id = \Auth::user()->company_id;
-		$data['company'] = Company::find( $id );
+		$data['company'] = Company::find( $id )->first();
 		return view( 'company.edit', $data );
     }
 
     public function update( Request $request, $id )
     {
 	    $input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete' ));
-		$record = Company::find( $id );
+		$record = Company::find( $id )->first();
 		foreach ( $input AS $key => $value ) $record[$key] = $value;
 		$record['image'] = $this->image_upload( $request, $id, $record->image );
 		$record->save();
@@ -124,7 +124,7 @@ class CompanyController extends Controller
     }
     
     public function generate_slug($id) {
-        $company = \App\Company::find( $id );
+        $company = \App\Company::find( $id )->first();
         if(empty($company->slug)){
             $company->slug = Display::linkify($company->title);
             $company->save();

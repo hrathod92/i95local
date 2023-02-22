@@ -14,7 +14,7 @@ class MenuController extends Controller
 		{
 				$this->middleware('site');
         //$this->middleware( 'role:admin', [ 'except' => [ 'content' ]]);
-        //$this->beforeFilter( 'csrf', array('on'=>'post'));
+        //// $this->beforeFilter( 'csrf', array('on'=>'post'));
     }
 	
     public function index()
@@ -37,20 +37,20 @@ class MenuController extends Controller
 
     public function show($id)
     {
-        $data = Menu::find( $id );
+        $data = Menu::find( $id )->first();
         return view( 'menu.show', $data );
     }
 
     public function edit($id)
     {
-        $data['menu'] = Menu::find( $id );
-        return view( 'menu.edit', $data );
+        $data['menu'] = Menu::find( $id )->first();
+        return view( 'menu.edit', $data )->first();
     }
 
     public function update(Request $request, $id)
     {
 			$input = \Input::except( array( 'submit', '_token', '_method' ));
-					$record = Menu::find( $id );
+					$record = Menu::find( $id )->first();
 			foreach ( $input AS $key => $value ) {
 				$record[$key] = $value;
 			}
@@ -60,7 +60,7 @@ class MenuController extends Controller
 	
 		public function addSite(Request $request)
 		{
-				$menu = Menu::find($request->menu_id);
+				$menu = Menu::find($request->menu_id)->first();
 				$addSite = true;
 				if($menu->sites->count() > 0)
 				{
@@ -81,7 +81,7 @@ class MenuController extends Controller
 	
 		public function removeSite(Request $request)
 		{
-				$menu = Menu::find($request->menu_id);
+				$menu = Menu::find($request->menu_id)->first();
 				$menu->sites()->detach($request->site_id);
 				return redirect('/menus/'.$menu->id.'/edit');
 		}

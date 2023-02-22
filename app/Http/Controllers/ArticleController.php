@@ -20,7 +20,7 @@ class ArticleController extends Controller
 			$this->middleware( 'auth', [ 'except' => [ 'index', 'show', 'content' ]]);
 			$this->middleware('site');
 			//$this->middleware( 'role:admin', [ 'except' => [ 'index', 'show' ]]);
-			$this->beforeFilter( 'csrf', array( 'on'=>'post' ));
+			// $this->beforeFilter( 'csrf', array( 'on'=>'post' ));
 	}
 
 	public function index( $slug='' )
@@ -105,7 +105,7 @@ class ArticleController extends Controller
 	public function show($id)
 	{
 		Click::set( 'article', $id );
-		$data = Article::with( 'company', 'author' )->find( $id );
+		$data = Article::with( 'company', 'author' )->find( $id )->first();
 		$data['categoryID'] = $data->category_id;
 		return view( 'article.show', $data )->withData( $data );
 	}
@@ -144,14 +144,14 @@ class ArticleController extends Controller
 
 	public function edit($id)
 	{
-		$data['article'] = Article::find( $id );
+		$data['article'] = Article::find( $id )->first();
 		return view( 'article.edit', $data );
 	}
 
 	public function update(Request $request, $id)
 	{
 		$input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete', 'video_thumbnail'  ));
-		$record = Article::find( $id );
+		$record = Article::find( $id )->first();
 		if($record->status_id == 1 && $request->status_id == 0){
 			$newMess = \App\Helpers\Message::postNew($record->author_id, $record->company_id, 'Article Approved - '.$record->title, "Your Article has been approved.");
 		}
@@ -179,7 +179,7 @@ class ArticleController extends Controller
 		}
 		
 		$record->preview = true;
-		return redirect()->action( 'ArticleController@show', [ 'id' => $id ] );
+		return redirect()->action( 'ArticleController@show', [ 'article' => $id ] );
 	}
 	
 	  public function updateSlug(){
@@ -193,7 +193,7 @@ class ArticleController extends Controller
 
 	public function destroy($id)
 	{
-		$data= Article::find($id);
+		$data= Article::find($id)->first();
 		$data->delete();
 		$this->index();
 	}

@@ -28,7 +28,7 @@ class AuthorController extends Controller
 	
     public function show($id)
     {
-        $data = Author::find( $id );
+        $data = Author::find( $id )->first();
         return view( 'author.show', $data );
     }
 
@@ -60,14 +60,14 @@ class AuthorController extends Controller
 
     public function edit($id)
     {
-        $data['author'] = Author::find( $id );
+        $data['author'] = Author::find( $id )->first();
         return view( 'author.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 			$input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete', 'company' ));
-			$record = Author::find( $id );
+			$record = Author::find( $id )->first();
 			foreach ( $input AS $key => $value ) {
 				$record[$key] = $value;
 			}

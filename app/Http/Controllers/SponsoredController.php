@@ -45,20 +45,20 @@ class SponsoredController extends Controller
 
     public function show($id)
     {
-        $data = Sponsored::find( $id );
+        $data = Sponsored::find( $id )->first();
         return view( 'sponsored.show', $data );
     }
 
     public function edit($id)
     {
-        $data['sponsored'] = Sponsored::find( $id );
+        $data['sponsored'] = Sponsored::find( $id )->first();
         return view( 'sponsored.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 		$input = \Input::except( array( 'submit', '_token', '_method' ));
-		$record = Sponsored::find( $id );
+		$record = Sponsored::find( $id )->first();
 		foreach ( $input AS $key => $value ) {
 			$record[$key] = $value;
 		}

@@ -1,5 +1,5 @@
 <?php 
-  $eventTypes = \App\EventType::orderBy( 'id' )->lists( 'title', 'id' );
+  $eventTypes = \App\EventType::orderBy( 'id' )->pluck( 'title', 'id' );
   $eventTypes->prepend( 'All', 0 );
 ?>
 

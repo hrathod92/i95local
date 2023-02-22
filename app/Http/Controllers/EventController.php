@@ -25,7 +25,7 @@ class EventController extends Controller
 		$query= Event::with( 'event_type' );
 		if ( $event_type_id != 0 ) {
 			$query = $query->where( 'event_type_id', $event_type_id );   
-			$type = \App\EventType::find($event_type_id);
+			$type = \App\EventType::find($event_type_id)->first();
 			$data['type'] = $type->title;
 		}
 		if ( $search_string = \Input::get( 'search_string' )) {
@@ -74,14 +74,14 @@ class EventController extends Controller
 			->orderBy( 'starts_at' )
 			->get();
 		$data['status'] = $status;
-		$data['company'] = Company::find( $id );
+		$data['company'] = Company::find( $id )->first();
 		return view( 'event.company', $data );
 	}
 
 	public function show($id)
 	{
 		Click::set( 'event', $id );
-		$data = Event::with( 'event_type' )->find( $id );
+		$data = Event::with( 'event_type' )->find( $id )->first();
 		return view( 'event.show', $data );
 	}
 	
@@ -134,14 +134,14 @@ class EventController extends Controller
 
 	public function edit($id)
 	{
-		$data['event'] = Event::find( $id );
+		$data['event'] = Event::find( $id )->first();
 		return view( 'event.edit', $data );
 	}
 
 	public function update(Request $request, $id)
 	{
 		$input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete' ));
-		$record = Event::find( $id );
+		$record = Event::find( $id )->first();
 		
 		foreach ( $input AS $key => $value ) $record[$key] = $value;
 		$record['starts_at'] = \Carbon\Carbon::parse($request->starts_at)->format('Y-m-d');
@@ -171,14 +171,14 @@ class EventController extends Controller
 
 	public function destroy($id)
 	{
-		$data= Event::find($id);
+		$data= Event::find($id)->first();
 		$data->delete();
 		return redirect( '/events' );
 	}
 
 	public function remove(Request $request)
 	{
-		$event = Event::find($request->input('event_id'));
+		$event = Event::find($request->input('event_id'))->first();
 		$event->delete();
 		return redirect( '/events/admin' );
 	}

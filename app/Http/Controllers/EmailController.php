@@ -20,7 +20,7 @@ class EmailController extends Controller
     {
         $this->middleware( 'auth', [ 'except' => [ 'index', 'show' ]]);
         //$this->middleware( 'role:admin', [ 'except' => [ 'index', 'show' ]]);
-        //$this->beforeFilter( 'csrf', array( 'on'=>'post' ));
+        //// $this->beforeFilter( 'csrf', array( 'on'=>'post' ));
     }
 	
     public function orderReminder()
@@ -35,7 +35,7 @@ class EmailController extends Controller
                 $q->where('id', '=', $order->account_id);
             })->get();
             
-            $accountName = \App\Account::find($order->account_id)->title;
+            $accountName = \App\Account::find($order->account_id)->first()->title;
             
             foreach($users as $user)
             {
@@ -73,7 +73,7 @@ class EmailController extends Controller
                 $q->where('id', '=', $order->account_id);
             })->get();
             
-            $accountName = \App\Account::find($order->account_id)->title;
+            $accountName = \App\Account::find($order->account_id)->first()->title;
             
             foreach($users as $user)
             {

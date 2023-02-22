@@ -1,6 +1,6 @@
 <?php 
   $blockCategoriesStr = $company->getCatStrWithAnchors(); 
-	$company_url = \App\Company::find($id);
+	$company_url = \App\Company::find($id)->first();
 ?>
 
 @if ( !empty( $blockCategoriesStr ) && $company->category['slug'] != 'none' )

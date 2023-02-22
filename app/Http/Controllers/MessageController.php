@@ -44,20 +44,20 @@ class MessageController extends Controller
 
     public function show($id)
     {
-        $data = Message::find( $id );
+        $data = Message::find( $id )->first();
         return view( 'message.show', $data );
     }
 
     public function edit($id)
     {
-        $data['message'] = Message::find( $id );
+        $data['message'] = Message::find( $id )->first();
         return view( 'message.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 			$input = \Input::except( array( 'submit', '_token', '_method' ));
-			$record = Message::find( $id );
+			$record = Message::find( $id )->first();
 			foreach ( $input AS $key => $value ) {
 				$record[$key] = $value;
 			}

@@ -25,7 +25,7 @@
             <tr>
                 <td data-label="Account">{{$account->title}}</td>
                 <td class="nowrap" data-label="City">{{$account->city}}</td>
-                <td class="nowrap" data-label="State">@if($account->state != ''){{\App\State::find($account->state)->name}}@endif</td>
+                <td class="nowrap" data-label="State">@if($account->state != ''){{\App\State::find($account->state)->first()->name}}@endif</td>
                 <td class="nowrap" data-label="Zip">{{$account->zip_code}}</td>
                 <td class="align-center nowrap">
                     {!! Form::submit( 'Add to User', array('class'=>'btn btn-large btn-primary btn-block small' )) !!}

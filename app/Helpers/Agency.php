@@ -13,7 +13,7 @@ class Agency {
     $clients = AgencyCompany::where('agency_id', $id)->get();
     $str = null;
     foreach($clients as $client){
-        $record = \App\Company::find($client->company_id);
+        $record = \App\Company::find($client->company_id)->first();
         $str = $str.$record->title.' - ';
     }
     $str = substr($str, 0, -3);
@@ -24,7 +24,7 @@ class Agency {
     $clients = AgencyCompany::where('agency_id', $id)->get();
     $clientList = new collection();
     foreach($clients as $client){
-        $record = \App\Company::find($client->company_id);
+        $record = \App\Company::find($client->company_id)->first();
         $clientList->push($record);
     }
     $clientList = $clientList->sortBy('title');

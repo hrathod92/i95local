@@ -16,7 +16,7 @@ class ClickController extends Controller
 	{
 		$this->middleware( 'auth', [ 'except' => [ 'setFromFrontEnd' ]]);
 		$this->middleware('site');
-		$this->beforeFilter( 'csrf', array( 'on'=>'post' ));
+		// $this->beforeFilter( 'csrf', array( 'on'=>'post' ));
 		$this->click_types_that_can_be_edited = [ 'video', 'release', 'event', 'article', 'ad', 'job', 'newsletter', 'sponsored' ];
 	}		
 
@@ -68,7 +68,7 @@ class ClickController extends Controller
 			->where( 'company_id', $company_id )
 			->orderBy( 'clickable_id', 'desc' )
 			->get();
-		$data['company_title'] = Company::where( 'id', $company_id )->pluck( 'title' );
+		$data['company_title'] = Company::where( 'id', $company_id )->pluck( 'title' )->first();
 		return view( 'click.company', $data );
 	}
 

@@ -14,7 +14,7 @@
 @if ( \Auth::user()->role == 'admin' )
   <div class="form-element">
     {!! Form::Label( 'status_id', 'Overall Status (Admin)' ) !!} 
-    {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->lists( 'title', 'id' ), isset( $company->status_id ) ? $company->status_id : '' ) !!}
+    {!! Form::select( 'status_id', \App\Status::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $company->status_id ) ? $company->status_id : '' ) !!}
   </div>
 @endif
 

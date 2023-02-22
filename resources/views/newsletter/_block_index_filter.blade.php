@@ -1,5 +1,5 @@
 <?php 
-  $newsletterYear = \App\NewsletterYear::where( 'title', '<=', date( 'Y' ))->orderBy( 'title', 'DESC' )->lists( 'title', 'title' );
+  $newsletterYear = \App\NewsletterYear::where( 'title', '<=', date( 'Y' ))->orderBy( 'title', 'DESC' )->pluck( 'title', 'title' );
   $newsletterYear->prepend( 'All', 'all' );
 ?>
 

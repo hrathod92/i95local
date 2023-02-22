@@ -14,12 +14,12 @@ class DashboardController extends BaseController {
 		$this->middleware( 'auth' );
 		$this->middleware('site');
 		$this->middleware( 'role:admin', [ 'only' => [ 'getAdmin' ]]);
-		$this->beforeFilter( 'csrf', array('on'=>'post'));
+		// $this->beforeFilter( 'csrf', array('on'=>'post'));
 	}
 	
 	public function getDashboard() {
 		$dash = 'dashboard.' . Auth::user()->role;
-		$data['user'] = User::find( Auth::user()->id );
+		$data['user'] = User::find( Auth::user()->id )->first();
 		$data['company'] = Company::find( Auth::user()->company_id);
 
 		return view( $dash, $data );

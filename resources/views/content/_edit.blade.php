@@ -19,7 +19,7 @@
 {!! Form::textarea( 'css' ) !!}
 
 {!! Form::Label( 'ad_show_id', 'Show Ads' ) !!} 
-{!! Form::select( 'ad_show_id', \App\Status::orderBy( 'id' )->lists( 'title', 'id' ), isset( $content->ad_show_id ) ? $content->ad_show_id : '' ) !!}
+{!! Form::select( 'ad_show_id', \App\Status::orderBy( 'id' )->pluck( 'title', 'id' ), isset( $content->ad_show_id ) ? $content->ad_show_id : '' ) !!}
 
 
 <div class="form-actions">

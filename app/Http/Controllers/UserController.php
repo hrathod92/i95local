@@ -35,7 +35,7 @@ class UserController extends BaseController {
 		
 		$this->middleware( 'role:admin', [ 'only' => [ 'getIndex' ]]);
 		$this->middleware( 'site' );
-		$this->beforeFilter( 'csrf', array( 'on'=>'post' ));
+		// $this->beforeFilter( 'csrf', array( 'on'=>'post' ));
 		$this->user = \Auth::user();
 	}
 
@@ -51,7 +51,7 @@ class UserController extends BaseController {
 
 	public function getView( $id=1 ) {
 		if( ($this->user->id == $id ) || ($this->user->role == "admin") ) {
-			$data = User::with( 'user_status' )->find( $id );
+			$data = User::with( 'user_status' )->find( $id )->first();
 			return view( 'user.view', $data );
 		}
 		else {
@@ -61,7 +61,7 @@ class UserController extends BaseController {
 	
 	public function getAccount() {
 		if( isset( \Auth::user()->id )) {
-			$data = User::with( 'user_status' )->find( \Auth::user()->id );
+			$data = User::with( 'user_status' )->find( \Auth::user()->id )->first();
 			$data['param_array'] = json_decode( $data->params );
 			return view( 'user.account', $data );
 		}
@@ -73,7 +73,7 @@ class UserController extends BaseController {
 	public function getEdit( $id=1 ) {
 		if( ($this->user->id == $id ) || ($this->user->role == "admin") )
 		{
-			$data['user'] = User::find( $id );
+			$data['user'] = User::find( $id )->first();
 			return view( 'user.edit', $data );
 		} else {
 			return redirect("dashboard");
@@ -83,7 +83,7 @@ class UserController extends BaseController {
 	public function postEdit($id, Request $request) {
 		if( ($this->user->id == $id ) || ($this->user->role == "admin") ) {
 
-			$user = User::find( $id );
+			$user = User::find( $id )->first();
 			$emailOld = $user->email;
 			$input = $request->except( array( 'submit', '_token' ));
 			foreach ( $input AS $key => $value ) {
@@ -176,7 +176,7 @@ class UserController extends BaseController {
 	}
 	
 	public function getRegister( $id ) {
-		$register = \App\Register::find( $id );
+		$register = \App\Register::find( $id )->first();
 		$register->status = 'created';
 		$register->save();
 		$registerArray = (array) $register;
@@ -218,7 +218,7 @@ class UserController extends BaseController {
 	
 	public function postPassword() {
 		$email = \Input::get( 'email' );
-		if ( $user_id = User::where( 'email', '=', $email )->pluck( 'id' ) ) {
+		if ( $user_id = User::where( 'email', '=', $email )->pluck( 'id' )->first() ) {
 			$token = '12345';
 			$reset = \App\Reset::create();
 			$reset->user_id = $user_id;
@@ -261,7 +261,7 @@ class UserController extends BaseController {
 	public function postReset() {
 		$validator = \Validator::make( \Input::all(), User::$rules_password );
 		if  ($validator->passes() ) {
-			$user = User::find( \Input::get( 'id' ));
+			$user = User::find( \Input::get( 'id' ))->first();
 			$user->password = \Hash::make( \Input::get( 'password' ));
 			$user->save();
 			return view( 'user.reset_confirm' );
@@ -280,7 +280,7 @@ class UserController extends BaseController {
 	
 	public function sendRegistrationEmail(Request $request)
 	{
-		$register = \App\Register::find($request->input('id'));
+		$register = \App\Register::find($request->input('id'))->first();
 		
 		$password = base64_encode(openssl_random_pseudo_bytes(10));
 		$register->password = \Hash::make($password);

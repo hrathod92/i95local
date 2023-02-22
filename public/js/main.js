@@ -86,11 +86,11 @@ $(document).ready(function() {
   });
 
 
-  $('#responsive-menu-button').sidr({
-    name: 'sidr-main',
-    source: '#navigation',
-    side: 'right'
-  });
+  // $('#responsive-menu-button').sidr({
+  //   name: 'sidr-main',
+  //   source: '#navigation',
+  //   side: 'right'
+  // });
   
   //$("a.sidr-class-parent").attr("href", "#");
   

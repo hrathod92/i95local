@@ -5,7 +5,7 @@
   $page['sideblocks'] = [ 'dashboard.agency._agency','dashboard._block_agency' ];
   $page['css'] = 'dashboard';
   $clients = \App\Helpers\Agency::getClientList(Auth::user()->company_id);
-  $mine = \App\Company::find(Auth::user()->company_id);
+  $mine = \App\Company::find(Auth::user()->company_id->first());
 ?>
 @extends( 'templates.default' )
 

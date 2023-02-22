@@ -30,20 +30,20 @@ class DemoController extends Controller
 
     public function show($id)
     {
-        $data = Demo::find( $id );
+        $data = Demo::find( $id )->first();
         return view( 'demo.show', $data );
     }
 
     public function edit($id)
     {
-        $data['demo'] = Demo::find( $id );
+        $data['demo'] = Demo::find( $id )->first();
         return view( 'demo.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 		$input = \Input::except( array( 'submit', '_token', '_method' ));
-        $record = Demo::find( $id );
+        $record = Demo::find( $id )->first();
 		foreach ( $input AS $key => $value ) {
 			$record[$key] = $value;
 		}

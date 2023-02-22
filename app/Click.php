@@ -18,9 +18,9 @@ class Click extends Model
 	
 	public static function set( $type, $item_id )
 	{
-		$id = self::where( 'clickable_type', $type )->where( 'clickable_id', $item_id )->pluck( 'id' );
+		$id = self::where( 'clickable_type', $type )->where( 'clickable_id', $item_id )->pluck( 'id' )->first();
 		if ( !empty( $id )) {
-			$record = Click::find( $id );
+			$record = Click::find( $id )->first();
 			$record->click_count += 1;
 		} else {
 			$record = self::create();
@@ -31,19 +31,19 @@ class Click extends Model
 
 		//find company_id who is currently associated with the content that was viewed/clicked on
 		if ($type === 'article-read' || $type === 'article-contact' || $type === 'article') {
-			$company_id = Article::where( 'id', $item_id )->pluck( 'company_id' );
+			$company_id = Article::where( 'id', $item_id )->pluck( 'company_id' )->first();
 		}	
 		elseif ($type === 'event'){
-			$company_id = Event::where( 'id', $item_id )->pluck( 'company_id' );
+			$company_id = Event::where( 'id', $item_id )->pluck( 'company_id' )->first();
 		}	
 		elseif ($type === 'ad'){
-			$company_id = Ad::where( 'id', $item_id )->pluck( 'company_id' );
+			$company_id = Ad::where( 'id', $item_id )->pluck( 'company_id' )->first();
 		}
 		elseif ($type === 'job'){
-			$company_id = Job::where( 'id', $item_id )->pluck( 'company_id' );
+			$company_id = Job::where( 'id', $item_id )->pluck( 'company_id' )->first();
 		}
 		elseif ($type === 'video'){
-			$company_id = Video::where( 'id', $item_id )->pluck( 'company_id' );
+			$company_id = Video::where( 'id', $item_id )->pluck( 'company_id' )->first();
 		}
 
 		//associate the click instance to the company

@@ -10,7 +10,7 @@ Route::get( 'articles/update-slug', 'ArticleController@updateSlug' );
 Route::get( 'articles/content/{slug}', 'ArticleController@content' )->name('articles.content'); //js added this 2/5/2018
 Route::get( 'articles/company/{id?}', 'ArticleController@company' );
 Route::get( 'articles/import', 'ArticleController@import' );
-Route::get( 'articles/category/{slug}', 'ArticleController@index' )->name('articles.category');
+Route::get( 'articles/category/{slug?}', 'ArticleController@index' )->name('articles.category');
 Route::get( 'articles/index/{categoryID?}', 'ArticleController@index' );
 Route::get( 'articles/admin/{categoryID?}', 'ArticleController@admin' );
 Route::get( 'articles/email_queue', 'ArticleController@emailQueue' );

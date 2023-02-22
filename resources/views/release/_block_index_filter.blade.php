@@ -1,5 +1,5 @@
 <?php 
-  $releaseTypes = \App\ReleaseType::orderBy( 'id' )->lists( 'title', 'id' );
+  $releaseTypes = \App\ReleaseType::orderBy( 'id' )->pluck( 'title', 'id' );
   $releaseTypes->prepend( 'All', 0 );
 ?>
 

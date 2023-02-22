@@ -30,7 +30,7 @@ class ReleaseController extends Controller
 		
       $data[ 'release_type_id' ] = $release_type_id;
 	  if($release_type_id != 0){
-		$type = \App\ReleaseType::find($release_type_id);
+		$type = \App\ReleaseType::find($release_type_id)->first();
 	  	$data['type'] = $type->title;
 	  }
       $data[ 'search_string' ] = $search_string;
@@ -45,7 +45,7 @@ class ReleaseController extends Controller
 				->orderBy( 'id', 'desc' )
 				->take( 100 )
 				->get();
-			$data['company'] = Company::find( $id );
+			$data['company'] = Company::find( $id )->first();
 			return view( 'release.company', $data );
     }
 	
@@ -58,7 +58,7 @@ class ReleaseController extends Controller
 				->orderBy( 'id', 'desc' )
 				->get();
 			foreach($exports as $export){
-				$releaseType = \App\ReleaseType::find($export->release_type_id);
+				$releaseType = \App\ReleaseType::find($export->release_type_id)->first();
 				$export->release_type_id = $releaseType->title;
 			}
 			$data['export'] = $exports;
@@ -69,7 +69,7 @@ class ReleaseController extends Controller
     public function show($id)
     {
 			Click::set( 'release', $id );
-			$data = Release::find( $id );
+			$data = Release::find( $id )->first();
 			return view( 'release.show', $data );
     }
 
@@ -102,7 +102,7 @@ class ReleaseController extends Controller
 
     public function edit($id)
     {
-			$data['release'] = Release::find( $id );
+			$data['release'] = Release::find( $id )->first();
 			return view( 'release.edit', $data );
     }
 
@@ -115,7 +115,7 @@ class ReleaseController extends Controller
 					return back()->withErrors($validator)->withInput();
 			}
 			$input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete' ));
-			$record = Release::find( $id );
+			$record = Release::find( $id )->first();
 			foreach ( $input AS $key => $value ) {
 				$record[$key] = $value;
 			}

@@ -2,7 +2,7 @@
 	<?php 
 	  $companies = \App\Company::where( 'status_id', 0 )
   			->orderBy( 'title' )
-  			->lists( 'title', 'id' );
+  			->pluck( 'title', 'id' );
 	  	$companies->prepend( 'All', 0 );
 		foreach ( $companies AS $complist ) $complist = \App\Helpers\Display::teaser( $complist, 20 );
 	?>
@@ -10,7 +10,7 @@
 	  	->whereNotNull( 'clickable_type' )
 		->distinct( 'clickable_type' )
 	  	->orderBy( 'clickable_type' )
-	  	->lists( 'clickable_type' );
+	  	->pluck( 'clickable_type' );
 		$blockTypes->prepend( 'All');
 	?>
 	<div class="filter-block">

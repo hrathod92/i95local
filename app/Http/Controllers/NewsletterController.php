@@ -35,7 +35,7 @@ class NewsletterController extends Controller
 			if ( $id == 0 ) $id = Newsletter::where( 'status_id', 0 )
 				->orderBy( 'title', 'DESC' )
 				->pluck( 'id' );
-			$data = Newsletter::find( $id );
+			$data = Newsletter::find( $id )->first();
 			return view( 'newsletter.show', $data );
     }
 	
@@ -70,14 +70,14 @@ class NewsletterController extends Controller
 
     public function edit($id)
     {
-        $data['newsletter'] = Newsletter::find( $id );
+        $data['newsletter'] = Newsletter::find( $id )->first();
         return view( 'newsletter.edit', $data );
     }
 	
 	  public function update(Request $request, $id)
     {
 			$input = \Input::except( array( 'submit', '_token', '_method', 'image', 'image_delete', 'document', 'document_delete' ));
-			$record = Newsletter::find( $id );
+			$record = Newsletter::find( $id )->first();
 			foreach ( $input AS $key => $value ) {
 				$record[$key] = $value;
 			}

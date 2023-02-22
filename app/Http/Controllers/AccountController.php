@@ -30,20 +30,20 @@ class AccountController extends Controller
 
     public function show($id)
     {
-        $data = Account::find( $id );
+        $data = Account::find( $id )->first();
         return view( 'account.show', $data );
     }
 
     public function edit($id)
     {
-        $data['account'] = Account::find( $id );
+        $data['account'] = Account::find( $id )->first();
         return view( 'account.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 		$input = \Input::except( array( 'submit', '_token', '_method' ));
-        $record = Account::find( $id );
+        $record = Account::find( $id )->first();
 		foreach ( $input AS $key => $value ) {
 			$record[$key] = $value;
 		}

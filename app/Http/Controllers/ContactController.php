@@ -16,7 +16,7 @@ class ContactController extends Controller
 {
 	public function __construct() {
         //$this->middleware( 'auth', [ 'except' => [ 'create', 'store' ]]);
-        $this->beforeFilter( 'csrf', array( 'on'=>'post' ));
+        // $this->beforeFilter( 'csrf', array( 'on'=>'post' ));
     }
 
     public function index()
@@ -67,7 +67,7 @@ class ContactController extends Controller
 	
 	protected function send_email( $contact ) 
 	{
-		$settingsContact = Setting::where( 'type', '=', 'contact ')->lists( 'body', 'slug' );
+		$settingsContact = Setting::where( 'type', '=', 'contact ')->pluck( 'body', 'slug' );
 		Mail::send( 'emails.contact', 
 			[
 				'name' => $contact->name, 
@@ -85,20 +85,20 @@ class ContactController extends Controller
 	
     public function show($id)
     {
-        $data['contact'] = Contact::with( 'status' )->find( $id );
+        $data['contact'] = Contact::with( 'status' )->find( $id )->first();
         return view( 'contact.show', $data );
     }
 
     public function edit($id)
     {
-        $data['contact'] = Contact::with( 'status' )->find( $id );
+        $data['contact'] = Contact::with( 'status' )->find( $id )->first();
         return view( 'contact.edit', $data );
     }
 
     public function update(Request $request, $id)
     {
 			$input = \Input::except( array( 'submit', '_token', '_method' ));
-			$record = Contact::find( $id );
+			$record = Contact::find( $id )->first();
 			foreach ( $input AS $key => $value ) {
 				$record[$key] = $value;
 			}

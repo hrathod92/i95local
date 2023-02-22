@@ -134,10 +134,10 @@
 				</div>
    		@endif
 			<div class='article-buttons'>
-				@if ( $company_id != 0 )
+				@if ( $company_id != 0 && isset($company))
 					<a class='button click-tracking' href='/companies/{{ $company['slug'] }}' data-click-type='article-read' target='_blank'>Read More</a>
 				@endif
-				@if ( !empty( $company['contact_us_url'] ))
+				@if ( isset($company) && !empty( $company['contact_us_url'] ))
 					@if ( strpos( $company['contact_us_url'], 'http' ) !== false )
 						<a class='button click-tracking' href='{{ $company['contact_us_url'] }}' data-click-type='article-contact' target='_blank'>Contact Us</a>
 					@else

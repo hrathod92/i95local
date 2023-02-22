@@ -20,7 +20,7 @@ class AdRandomizer
     {
         return Ad::wherePublic()
                  ->where('type', $type)
-                 ->lists('random_weight', 'id')
+                 ->pluck('random_weight', 'id')
                  ->toArray();
     }
 

@@ -3,7 +3,7 @@
   $blockProducts = DB::table( 'products' )
                  ->select( 'category_id', DB::raw( 'count(*) as total' ))
                  ->groupBy('category_id')
-                 ->lists( 'total', 'category_id' );
+                 ->pluck( 'total', 'category_id' );
 ?>
 <h2>Categories</h2>
 <ul>

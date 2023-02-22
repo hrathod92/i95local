@@ -1,7 +1,7 @@
 <?php
     $page['sideblocks'] = [ 'company.show._block_sidebar' ];
     $page['css'] = 'company-show';
-	$video_count = \App\Video::where( 'company_id', $id )
+	  $video_count = \App\Video::where( 'company_id', $id )
 		->where( 'status_id', 0 )
 		->orderBy( 'id', 'DESC' )
 		->count(); 
