@@ -25,7 +25,11 @@
   <tbody>
     @foreach ( $releases as $item )
       <tr>
-        <td class="block-title" data-label="Type"><a href="/releases/type/{{ $item->release_type_id }}">{{ $item->release_type['title'] }}</a></td>
+        @if(isset($item->release_type_id) && $item->release_type_id)
+          <td class="block-title" data-label="Type"><a href="/releases/type/{{ $item->release_type_id }}">{{ $item->release_type['title'] }}</a></td>
+        @else
+          <td class="block-title" data-label="Type"></td>
+        @endif
         <td class="block-title" data-label="Title"><a href="/releases/{{ $item->id }}">{{ $item->title }}</a></td>
         <td>{{isset($item->company->title) ? $item->company->title : "" }}</td>
         <td class="block-date align-center nowrap" data-label="Date"><a href="/releases/{{ $item->id }}">{{ date( 'M d, Y', strtotime( $item->pub_date )) }}</a></td> 

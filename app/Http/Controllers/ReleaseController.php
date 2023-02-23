@@ -54,14 +54,14 @@ class ReleaseController extends Controller
 			$data['releases'] = Release::with( 'release_type' )
 				->orderBy( 'id', 'desc' )
 				->get();
-			$exports = Release::select('title','first_name','last_name','contact_title','phone','email','release_type_id','company_name_sub')
-				->orderBy( 'id', 'desc' )
-				->get();
-			foreach($exports as $export){
-				$releaseType = \App\ReleaseType::find($export->release_type_id)->first();
-				$export->release_type_id = $releaseType->title;
-			}
-			$data['export'] = $exports;
+			// $exports = Release::select('title','first_name','last_name','contact_title','phone','email','release_type_id','company_name_sub')
+			// 	->orderBy( 'id', 'desc' )
+			// 	->get();
+			// foreach($exports as $export){
+			// 	$releaseType = \App\ReleaseType::find($export->release_type_id)->first();
+			// 	$export->release_type_id = $releaseType->title;
+			// }
+			// $data['export'] = $exports;
 			$data['export']['reportName'] = "Inbox_Information";
 			return view( 'release.admin', $data );
     }

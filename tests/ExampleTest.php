@@ -13,6 +13,7 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
+        // Second comment
         $this->visit('/')
              ->see('Laravel 5');
     }
