@@ -27,7 +27,7 @@
     @foreach ( $jobs as $item )
       <tr>
         <td>{{ $item->job_type['title'] }}</td>
-        <td>{{ $item->company['title'] }}</td>
+        <td>{{ $item->company['title'] ?? '' }}</td>
         <td class="block-title" data-label="Title"><a href="/jobs/{{ $item->id }}">{{ $item->job_title }}</a></td>
         <td class="align-center">{{ Display::dateStd( $item->created_at ) }}</td>
         <td class="align-center">{{ $item->status['title'] }}</td>
